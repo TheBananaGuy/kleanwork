@@ -1,0 +1,8 @@
+{
+  "name": "kleanwork",
+  "version": "0.0.666",
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "jquery-validation": "jquery-validate#^1.15.1"
+  }
+}
