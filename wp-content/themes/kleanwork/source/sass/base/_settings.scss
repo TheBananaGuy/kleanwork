@@ -1,16 +1,23 @@
 
 // Base Spacing Unit
-$spacing: 22px;
+$spacing: 30px;
+
+$spacing-shadow-blur: 3px;
+$spacing-shadow-x: 1px;
+$spacing-shadow-y: 1px;
+$spacing-shadow-distance: 0px;
 
 // Widths
 $max-page-width: 1280px;
 
+$width-border: 2px;
+$width-max: 400px;
+$width-min: 120px;
+
 // Radius
-$radius-base: 8px;
-$radius-large: $radius-base * 1.75;
-$radius-small: $radius-base / 2;
+$radius-base: 5px;
 
 // Time
-$time-slow: .5s;
+$time-slow: .3s;
 $time-fast: .1s;
 

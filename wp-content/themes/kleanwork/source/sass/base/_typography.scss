@@ -3,24 +3,40 @@
 // Styleguide 3.
 
 // Font Families
-$font-family-base:   'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-base: 'Gotham Narrow A', 'Gotham Narrow B', sans-serif;
+$font-family-header: 'Gotham A', 'Gotham B', sans-serif;
 
 // Font Sizes
-$font-size-base:     14px;
+$font-size-base:     16px;
 
-$font-size-xlarge:   34px;
-$font-size-large:    20px;
-$font-size-medium:   18px;
-$font-size-small:    10px;
+$font-size-xlarge:   70px;
+$font-size-large:    28px;
+$font-size-medium:   20px;
+$font-size-normal:   16px;
+$font-size-small:    14px;
+$font-size-xsmall:   13px;
+
+// Tablet sizes
+$font-size-xlarge--tablet: 50px; 
+
+// palm sizes
+$font-size-xlarge--palm: 32px;
+
 
 // Font Weights
 $font-weight-base:   400;
 $font-weight-light:  300;
 $font-weight-heavy:  700;
+$font-weight-super-heavy: 800;
 
 // Line Heights
-$line-height-base:   1.3;
+$line-height-base:   1.25;
 
+
+// Kernings
+$font-kerning-large: 0.03em;
+$font-kerning-medium: 0.02em;
+$font-kerning-small: 0.01em;
 // Font Size Helpers Classes
 .xlarge {
   font-size: $font-size-xlarge !important;
@@ -36,6 +52,7 @@ $line-height-base:   1.3;
 
 .small {
   font-size: $font-size-small !important;
+  letter-spacing: -$font-kerning-small;
 }
 
 %limit-width {
@@ -50,67 +67,266 @@ $line-height-base:   1.3;
   margin-top: 0;
 }
 
+%gotham-book {
+  font-family: $font-family-header;
+  font-weight: $font-weight-base;
+}
 
-// Base headers
-//
-// Markup: 
-// <h1>Heading (h1)</h1>
-// <h2>Heading (h2)</h2>
-// <h3>Heading (h3)</h3>
-// <h4>Heading (h4)</h4>
-// <h5>Heading (h5)</h5>
-// <h6>Heading (h6)</h6>
-// 
-// Styleguide 3.1
+%gotham-bold {
+  font-family: $font-family-header;
+  font-weight: $font-weight-heavy;
+}
 
-// Header classes
-//
-// Use these to get a specific header without using a header tag
-//
-// Markup:
-// <span class="{$modifiers}">{$modifiers}</span>
-//
-// .alpha                     - h1
-// .beta                      - h2
-// .gamma                     - h3
-// .delta                     - h4
-// .epsilon                   - h5
-// .zeta                      - h6
-//
-// Styleguide 3.2
+%gotham-black {
+  font-family: $font-family-header;
+  font-weight: $font-weight-super-heavy; 
+}
+
+%gotham-narrow-book {
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+}
+%gotham-narrow-bold {
+  font-family: $font-family-base;
+  font-weight: $font-weight-heavy;
+}
 
 h1,
 .alpha {
-  @extend %limit-width;
   @extend %push-bottom;
   @extend %flush-top;
+  @extend %gotham-black;
+
   font-size: $font-size-xlarge;
-  font-weight: $font-weight-heavy;
-  margin-bottom: $spacing;
+  margin-bottom: $spacing/2;
+  letter-spacing: -$font-kerning-large;
+
+  @include media(lap) {
+    font-size: $font-size-xlarge--tablet;
+  }
+
+  @include media(palm) {
+    font-size: $font-size-xlarge--palm;
+  }
 }
 
 h2,
 .beta,
 .lead {
-  @extend %limit-width;
   @extend %push-bottom;
   @extend %flush-top;
-  font-size: $font-size-large;
-  font-weight: $font-weight-base;
-  margin-bottom: $spacing;
+  @extend %gotham-black;
+
+  font-size: $font-size-xlarge;
+  margin-bottom: $spacing/2;
+  letter-spacing: -$font-kerning-large;
+
+  @include media(lap) {
+    font-size: $font-size-xlarge--tablet;
+  }
+
+  @include media(palm) {
+    font-size: $font-size-xlarge--palm;
+  }
 }
 
-h3, .gamma,
-h4, .delta,
+h3, .gamma {
+  @extend %gotham-narrow-book;
+
+  font-family: $font-family-base;
+  margin: 0px;
+}
+
+
 h5, .epsilon,
 h6, .zeta {
-  @extend %limit-width;
   @extend %flush-top;
+
   font-size: $font-size-medium;
   font-weight: $font-weight-heavy;
   margin-bottom: 0;
+  text-transform: uppercase;
 }
 
+.band--banner p,
+h4, .delta {
+  @extend %gotham-book;
+
+  font-size: $font-size-large;
+  letter-spacing: -$font-kerning-medium;
+}
+
+
 p {
-  @extend %limit-width;
+  @extend %gotham-narrow-book;
+
+  font-size: $font-size-normal;
+  letter-spacing: -$font-kerning-small;
+
+  strong {
+    font-weight: $font-weight-heavy;
+  }
+}
+
+.block__content h2 {
+  @extend %gotham-bold;
+  font-size: 65px;
+}
+.quote {
+  padding: $spacing*1.5 $spacing*2;
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    font-family: "fontello";
+    content: '\e808';
+    position: absolute;
+    top: $spacing/2;
+    left: $spacing/2;
+    font-size: 32px;
+    transform: rotate(180deg);
+  }
+
+  &:after {
+    font-family: "fontello";
+    content: '\e808';
+    position: absolute;
+    bottom: $spacing/2;
+    right: $spacing/2;
+    font-size: 32px;
+  }
+}
+
+.manchet {
+  font-size: $font-size-large;
+}
+
+.icon {
+    line-height: 1;
+    display: inline-block;
+    font-size: 24px;
+    transition: all .2s ease;
+}
+
+
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?56285742');
+  src: url('../fonts/fontello.eot?56285742#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff2?56285742') format('woff2'),
+       url('../fonts/fontello.woff?56285742') format('woff'),
+       url('../fonts/fontello.ttf?56285742') format('truetype'),
+       url('../fonts/fontello.svg?56285742#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?47581916#fontello') format('svg');
+  }
+}
+*/
+ 
+  %icon-style {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+  
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+  
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+  
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+  
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+  
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+  
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  }
+
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  @extend %icon-style;
+}
+ 
+.icon-facebook:before { content: '\e800'; } /* '' */
+.icon-instagram:before { content: '\e801'; } /* '' */
+.icon-linkedin:before { content: '\e802'; } /* '' */
+.icon-twitter:before { content: '\e803'; } /* '' */
+.icon-some:before { content: '\e804'; } /* '' */
+.icon-menu:before { content: '\e805'; } /* '' */
+.icon-close:before { content: '\e806'; } /* '' */
+.icon-pin:before { content: '\e807'; } /* '' */
+.icon-quote:before { content: '\e808'; } /* '' */
+.icon-citat:before { content: '\e80a'; } /* '' */
+.icon-right-open:before { content: '\f006'; } /* '' */
+
+
+
+.icon.icon-some:before {
+  content: "#";
+  border: 1px solid $color-dark;
+  border-radius: 5px;
+  padding: 4px 10px 4px 7px;
+  width: 32px;
+  height: 32px;
+  font-weight: $font-weight-base;
+  font-family: $font-family-header;
+  font-size: 22px;
+  margin-right: 8px;
+
+  @include media(palm) {
+    display: block;
+    border: none;
+    margin-top:11px;
+    margin-bottom: -7px;
+    margin-right: 1px;
+  }
+}
+.icon.icon-some:after {
+  content:"SoMe";
+  font-size: $font-size-medium;
+  @include media(palm) {
+    font-size: $font-size-small;
+  }
+}
+
+.icon.icon-menu {
+  font-size: 22px;
+
+  &:before {
+    font-size: 12px;
+  }
+  @include media(palm) {
+    font-size: $font-size-small;
+    margin-top: 16px;
+
+    &:before {
+        display: block;
+        margin-bottom: 12px;
+        margin-left: 15px;
+    }
+  }
 }

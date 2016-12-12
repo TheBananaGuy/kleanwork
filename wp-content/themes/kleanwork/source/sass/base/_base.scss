@@ -1,7 +1,6 @@
 //
 // Let's add some sensible defaults.
 // ---------------------------------------------------
-
 *,
 *:before,
 *:after {
@@ -34,6 +33,7 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -49,6 +49,13 @@ body {
   }
 }
 
+.restrict-width {
+  max-width:  640px;
+}
+
+.content-wrap {
+  overflow: hidden;
+}
 img {
   height: auto;
   max-width: 100%;
@@ -66,8 +73,12 @@ fieldset,
 figure,
 pre,
 hr {
-  margin-bottom: $spacing;
+  margin-bottom: $spacing/2;
   margin-top: 0;
+}
+
+.hide {
+    display: none;
 }
 
 // Remove Link styling.
@@ -95,11 +106,29 @@ a {
     color: $color-light;
   }
 }
-
+.inside-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
 // Use this to define an area where we need proper link styles, e.g content area or footer.
+
 .has-link-style {
   a {
     @extend .link;
   }
 }
 
+.line-spacing {
+  margin-left: 11px;
+  margin-right: 11px;
+
+  &--right {
+    margin-right: 11px;
+  }
+}
+
+@include media(palm) {
+  .palm-break {
+    display: block;
+  }
+}

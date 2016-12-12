@@ -40,6 +40,12 @@
   bottom: 0;
 }
 
+.group:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
 .flex-center {
   align-items: center;
   display: flex;
@@ -192,7 +198,7 @@ $nths:        2, 3, 4;
 
 .divider {
   border: 0;
-  border-bottom: 1px dotted $color-border-light;
+  border-bottom: 1px dotted $color-grey;
   padding-bottom: $spacing;
   margin-bottom: $spacing;
 }
@@ -304,4 +310,10 @@ $nths:        2, 3, 4;
 
 .block {
   display: block;
+}
+
+
+.overflow-hidden {
+    overflow: hidden;
+    position: fixed!important;
 }

@@ -1,0 +1,58 @@
+%drop-shadow {
+	box-shadow: $spacing-shadow-x $spacing-shadow-y $spacing-shadow-blur $spacing-shadow-distance $color-shadow;
+}
+
+%inset-shadow {
+	box-shadow: inset $spacing-shadow-x $spacing-shadow-y $spacing-shadow-blur $spacing-shadow-distance $color-shadow;
+}
+
+%input-border {
+	//border: $width-border solid $color-input-enabled;
+	border: none;
+}
+
+%rounded {
+	border-radius: $radius-base;
+}
+
+%mod--round {
+	border-radius: 1000px;
+}
+
+%mod--cta {
+	background-color: $color-cta;
+	//color: $color-font-base;
+	//color: $color-light;
+	&:hover {
+		background-color: darken($color-cta,10%);
+	}
+}
+
+%mod--wide {
+	width: 100%;
+}
+
+%mod--hollow {
+	@extend %inset-shadow;
+}
+
+%mod--raise {
+	@extend %drop-shadow;
+}
+
+%mod--big, .mod--big {
+    padding: $spacing $spacing*2;
+    margin: $spacing*2 $spacing;
+}
+
+%mod--cutoff-left {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	margin-left: -2px;
+}
+
+%mod--cutoff-right {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	margin-right: -2px;
+}

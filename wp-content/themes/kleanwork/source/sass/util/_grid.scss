@@ -3,10 +3,10 @@
 $grid-columns-total: 12 !default;
 
 // Breakpoints
-$palm-small:         321px !default;
+$palm-small:         341px !default;
 $lap-start:          681px !default;
 $desk-start:         960px !default;
-$desk-wide-start:    1200px !default;
+$desk-wide-start:    1280px !default;
 $ultra-wide:         1600px !default;
 $palm-end:           ($lap-start - 1px) !default;
 $lap-end:            ($desk-start - 1px) !default;
@@ -21,47 +21,47 @@ $spacing:            22px !default;
 
 @mixin media($media) {
   @if $media == 'palm-small' {
-    @media only screen and (max-width: $palm-small) { @content; }
+    @media all and (max-width: $palm-small) { @content; }
   }
 
   @if $media == 'palm' {
-    @media only screen and (max-width: $palm-end) { @content; }
+    @media all and (max-width: $palm-end) { @content; }
   }
 
   @if $media == 'lap' {
-    @media only screen and (min-width: $lap-start) and (max-width:$lap-end) { @content; }
+    @media all and (min-width: $lap-start) and (max-width:$lap-end) { @content; }
   }
 
   @if $media == 'lap-and-up' {
-    @media only screen and (min-width: $lap-start) { @content; }
+    @media all and (min-width: $lap-start) { @content; }
   }
 
   @if $media == 'portable' {
-    @media only screen and (max-width: $lap-end) { @content; }
+    @media all and (max-width: $lap-end) { @content; }
   }
 
   @if $media == 'below-desk'{
-    @media only screen and (max-width: $desk-start) { @content; }
+    @media all and (max-width: $desk-start) { @content; }
   }
 
   @if $media == 'desk'{
-    @media only screen and (min-width: $desk-start) and (max-width: $desk-wide-start) { @content; }
+    @media all and (min-width: $desk-start) and (max-width: $desk-wide-start) { @content; }
   }
 
   @if $media == 'desk-and-up'{
-    @media only screen and (min-width: $desk-start) { @content; }
+    @media all and (min-width: $desk-start) { @content; }
   }
 
   @if $media == 'below-desk-wide'{
-    @media only screen and (max-width: $desk-wide-start) { @content; }
+    @media all and (max-width: $desk-wide-start) { @content; }
   }
 
   @if $media == 'desk-wide'{
-    @media only screen and (min-width: $desk-wide-start) { @content; }
+    @media all and (min-width: $desk-wide-start) { @content; }
   }
 
   @if $media == 'ultra-wide'{
-    @media only screen and (min-width: $ultra-wide) { @content; }
+    @media all and (min-width: $ultra-wide) { @content; }
   }
 }
 
@@ -77,6 +77,8 @@ $spacing:            22px !default;
   }
 }
 
+
+
 // Generate Grid without suffix.
 @include grid-generate();
 
@@ -86,6 +88,11 @@ $spacing:            22px !default;
     @include grid-generate('--#{$breakpoint}');
   }
 }
+
+
+
+
+
 
 @mixin clearfix() {
   &:after {
@@ -256,4 +263,3 @@ $spacing:            22px !default;
 // </div>
 // 
 // Styleguide 1.3
-
