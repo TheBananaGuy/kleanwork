@@ -519,8 +519,8 @@ p strong {
 
 @font-face {
   font-family: fontello;
-  src: url(../fonts/fontello.eot?56285742);
-  src: url(../fonts/fontello.eot?56285742#iefix) format("embedded-opentype"), url(../fonts/fontello.woff2?56285742) format("woff2"), url(../fonts/fontello.woff?56285742) format("woff"), url(../fonts/fontello.ttf?56285742) format("truetype"), url(../fonts/fontello.svg?56285742#fontello) format("svg");
+  src: url(source/fonts/fontello/fontello.eot?56285742);
+  src: url(source/fonts/fontello/fontello.eot?56285742#iefix) format("embedded-opentype"), url(source/fonts/fontello/fontello.woff2?56285742) format("woff2"), url(source/fonts/fontello/fontello.woff?56285742) format("woff"), url(source/fonts/fontello/fontello.ttf?56285742) format("truetype"), url(source/fonts/fontello/fontello.svg?56285742#fontello) format("svg");
   font-weight: 400;
   font-style: normal; }
 
@@ -619,6 +619,76 @@ body, html {
     display: block;
     margin-bottom: 12px;
     margin-left: 15px; } }
+
+@font-face {
+  font-family: 'Gotham A';
+  src: url(source/fonts/Gotham/Gotham-Light.otf);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 300; }
+
+@font-face {
+  font-family: 'Gotham A';
+  src: url(source/fonts/Gotham/Gotham-Book.otf);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'Gotham A';
+  src: url(source/fonts/Gotham/Gotham-Bold.otf);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700; }
+
+@font-face {
+  font-family: 'Gotham A';
+  src: url(source/fonts/Gotham/Gotham-Black.otf);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800; }
+
+@font-face {
+  font-family: 'Gotham A';
+  src: url(source/fonts/Gotham/Gotham-Condensed-Book-2.otf);
+  font-stretch: condensed;
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'Gotham A';
+  src: url(source/fonts/Gotham/Gotham-Condensed-Bold.otf);
+  font-stretch: condensed;
+  font-style: normal;
+  font-weight: 700; }
+
+@font-face {
+  font-family: 'Gotham Narrow A';
+  src: url(source/fonts/Gotham/Gotham-Narrow-Light.otf);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 300; }
+
+@font-face {
+  font-family: 'Gotham Narrow A';
+  src: url(source/fonts/Gotham/Gotham-Narrow-Book.otf);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'Gotham Narrow A';
+  src: url(source/fonts/Gotham/Gotham-Narrow-Bold.otf);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700; }
+
+@font-face {
+  font-family: 'Gotham Narrow A';
+  src: url(source/fonts/Gotham/Gotham-Narrow-Black.otf);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800; }
 
 html {
   min-height: 100%; }
