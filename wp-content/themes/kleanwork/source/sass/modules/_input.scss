@@ -1,0 +1,78 @@
+footer {
+    input[type="text"], input[type="search"], input[type="tel"], input[type="email"], input[type="password"], textarea {
+        margin: $spacing/2;
+        padding: $spacing/2 +2.5;
+        max-width: 35rem;
+        background-color: $color-light;
+        outline-color: $color-primary;
+        transition: $time-slow;
+        color: $color-font-base;
+        //border: 2px solid $color-grey;
+        @extend %input-border;
+        @extend %rounded;
+        outline-width: 1px;
+    }
+
+    input[type="text"], input[type="search"], input[type="tel"], input[type="email"], input[type="password"], textarea {
+        &.mod--cutoff-left {
+            @extend %mod--cutoff-left
+        }
+
+        &.mod--cutoff-right {
+            @extend %mod--cutoff-right
+        }
+    }
+
+
+    .band .newsletter input {
+        @include media(palm-small) {
+            width: 90%;
+            margin: 0;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+
+
+    form {
+
+        position: relative;
+
+        label.error {
+            position: absolute;
+            background-color: $color-secondary;
+            bottom: 0;
+            left: 15px;
+            transform: translate(0, -48px);
+            border-radius: $spacing/4;
+            padding: $spacing;
+            white-space: initial;
+            text-align: left;
+
+            @include media(palm) {
+                left: 0;
+            }
+
+            @include media(palm-small) {
+                transform: translate(0, -115px);
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: -10px;
+                left: 10%;
+                width: 0;
+                border-width: 15px 15px 0;
+                border-style: solid;
+                border-color: $color-secondary transparent;
+            }
+        }
+    }
+
+    .newsletter-subscription-form {
+        display: inline;
+    }
+}

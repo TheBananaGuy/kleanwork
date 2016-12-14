@@ -1,0 +1,59 @@
+input[type="button"], input[type="reset"], input[type="submit"], .button {
+	margin: $spacing/2;
+	padding: $spacing/2 $spacing;
+	max-width: $width-max;
+	color: $color-font-invert;
+	background-color: $color-primary;
+	outline-color: $color-primary;
+	transition: $time-slow;
+    display: inline-block;
+	@extend %input-border;
+	@extend %rounded;
+
+    &.button--secondary {
+        background-color: $color-secondary;
+
+        &:hover, &:active {
+            background-color: lighten($color-secondary, 10%);
+        }
+    }
+
+    &.button--light {
+        border: 1px solid $color-light;
+        background-color: inherit;
+
+        &:hover, &:active {
+            background-color: rgba(255, 255, 255, .25);
+        }
+    }
+
+	&:hover {
+		background-color: darken($color-primary, 10%);
+	}
+    .s727 &
+    {
+        background-color: $color-secondary;
+	    &:hover {
+		    background-color: darken($color-secondary, 10%);
+	    }
+    }
+}
+
+input[disabled=disabled], .disabled {
+	background-color: lighten($color-input-disabled, 10%) !important;
+	color: $color-input-disabled !important;
+}
+
+.button {
+    &.mod--big {
+        @extend %mod--big;
+    }
+
+    &.mod--cutoff-left {
+    	@extend %mod--cutoff-left
+    }
+
+    &.mod--cutoff-right {
+    	@extend %mod--cutoff-right
+    }
+}

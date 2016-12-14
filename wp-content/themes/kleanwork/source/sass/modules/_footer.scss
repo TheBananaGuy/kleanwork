@@ -1,0 +1,15 @@
+footer {
+	.band--banner {
+		min-height: 720px;
+	}
+}
+
+@media only print {
+    footer {
+        .some,
+        .manchet,
+        .newsletter {
+            display: none;
+        }
+    }
+}

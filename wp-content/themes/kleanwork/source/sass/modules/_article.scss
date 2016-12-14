@@ -1,0 +1,85 @@
+.band--article {
+	h1,
+	h2 {
+		@extend %gotham-bold;
+
+		letter-spacing: -$font-kerning-large;
+		font-size: $font-size-xlarge;
+		line-height: $font-size-xlarge;
+
+		@include media(lap) {
+			font-size: $font-size-xlarge--tablet;
+			line-height: $font-size-xlarge--tablet;
+		}
+
+		@include media(palm) {
+			font-size: $font-size-xlarge--palm;
+			line-height: $font-size-xlarge--palm;
+		}
+	}
+	h3 {
+		@extend %gotham-narrow-bold;
+
+		font-size: $font-size-medium;
+	}
+	.manchet {
+		@extend %gotham-narrow-book;
+
+		letter-spacing: -$font-kerning-medium;
+		font-size: $font-size-medium;
+	}
+	p {
+		@extend %gotham-narrow-book;
+
+		font-size: $font-size-normal;
+	}
+	.imagetext {
+		@extend %gotham-narrow-book;
+
+		font-size: $font-size-xsmall;
+	}
+
+	.boxes {
+
+		@include media(lap) {
+			border-bottom: 2px solid rgba(0,0,0,0.3);
+			border-top: 2px solid rgba(0,0,0,0.3);
+			padding: $spacing/2;
+		}
+
+		@include media(palm) {
+			border-bottom: 2px solid rgba(0,0,0,0.3);
+			border-top: 2px solid rgba(0,0,0,0.3);
+			padding: $spacing/2;
+		}
+		.line-header {
+		    width: 40%;
+		    border-bottom: $spacing/4 solid $color-primary;
+		    margin: $spacing/2 0;
+
+		   @include media(lap) {
+		   	display: none;
+		   }
+
+		   @include media(palm) {
+		   	display: none;
+		   } 
+		}
+        .s727 &
+        {
+            .line-header
+            {
+                border-bottom-color: $color-secondary;
+            }
+        }
+        img {
+            margin-bottom: 20px;
+        }
+		h2 {
+			@extend %gotham-narrow-bold;
+
+			font-size: $font-size-medium;
+			line-height: $font-size-medium;
+		}
+	}
+}

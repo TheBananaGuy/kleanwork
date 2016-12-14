@@ -1,0 +1,195 @@
+.content-wrap {
+    form {
+        margin-bottom: $spacing*2;
+        max-width: 35rem;
+    }
+
+    %base-input-styling {
+        border: 0; // remove standard borders
+        display: block;
+        width: 100%;
+        max-width: 35rem;
+        padding: $spacing*0.8333333333 $spacing $spacing/2 $spacing/2;
+        margin-bottom: $spacing;
+        resize: none;
+        border: 1px dashed $color-border-light;
+        border-radius: $radius-base;
+
+        &:required {
+            border: 1px solid $color-border-dark;
+        }
+
+        &:focus {
+            border-color: $color-border-highlight;
+            outline: 0;
+        }
+    }
+
+
+
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="pass"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"] {
+        @extend %base-input-styling;
+
+        &.error {
+            border: 1px solid $color-error;
+        }
+
+        &.valid {
+            border: 1px solid $color-state-success;
+        }
+
+        &.mod--cutoff-left {
+            @extend %mod--cutoff-left
+        }
+
+        &.mod--cutoff-right {
+            @extend %mod--cutoff-right
+        }
+    }
+
+    textarea {
+        @extend %base-input-styling;
+        min-height: $spacing*6;
+
+        &.error {
+            border: 1px solid $color-error;
+        }
+
+        &.valid {
+            border: 1px solid $color-state-success;
+        }
+
+        &.mod--cutoff-left {
+            @extend %mod--cutoff-left
+        }
+
+        &.mod--cutoff-right {
+            @extend %mod--cutoff-right
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-right: $spacing/2;
+        margin-bottom: $spacing;
+
+        & ~ span {
+            //color: lighten($color-font-base, 50%); // Make non-required lighter
+            color: $color-font-base;
+        }
+
+        &:required ~ span {
+            color: $color-font-base;
+        }
+    }
+
+
+    label {
+        display: block;
+    }
+
+
+    .form-container {
+        max-width: 25rem;
+    }
+
+
+    %label {
+        position: absolute;
+        padding: $spacing/4 $spacing/2;
+        width: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        font-weight: 700;
+        font-size: 11px;
+        color: $color-light;
+        z-index: 99;
+
+
+        &:before {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+    }
+
+    label.error {
+        @extend %label;
+        background-color: $color-error;
+
+        &:before {
+            border-bottom: 10px solid $color-error;
+        }
+    }
+
+    label.hint {
+        @extend %label;
+        background-color: lighten($color-dark, 30%);
+
+        &:before {
+            border-bottom: 10px solid lighten($color-dark, 30%);
+        }
+    }
+
+    .error-container {
+        position: relative;
+        padding-bottom: $spacing/1.5;
+    }
+
+    .error-container label.error,
+    .error-container label.error {
+        position: absolute;
+        left: 0;
+        bottom: $spacing/4;
+        transform: translateX(0);
+        padding: 0 $spacing/2 0 $spacing;
+        width: 100%;
+        background-color: transparent;
+        color: $color-error;
+        text-align: left;
+
+
+        &:before {
+            //@extend %icon-styling;
+            //@extend .icon-chevron-up;
+            display: block;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            border: 0;
+            background-color: $color-error;
+            color: $color-light;
+            width: $spacing/2;
+            height: $spacing/2;
+            border-radius: 100%;
+        }
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="pass"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    textarea {
+        &.valid {
+            &:before {
+                //@extend %icon-styling;
+                content: '\e67d';
+            }
+        }
+    }
+}

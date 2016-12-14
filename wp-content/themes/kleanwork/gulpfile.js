@@ -25,7 +25,7 @@ var
 SOURCE		= 'source/',
 BOWER		= 'bower_components/',
 CSS			=  SOURCE + 'sass/',
-JS 			=  SOURCE + 'js/',
+JS 			=  SOURCE + 'js/scripts/',
 DIST 		= '.'
 ;
 

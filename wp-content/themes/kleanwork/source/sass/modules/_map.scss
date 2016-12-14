@@ -1,0 +1,171 @@
+.map {
+	position: relative;
+
+    img {
+        width: 100%;
+    }
+}
+
+.map-mobile {
+	display: none;
+
+	p {
+		margin-bottom: 0px;
+	}
+}
+.band.band--image {
+	.map--large, .map--medium, .map--palm {
+		display: none;
+	}
+}
+
+.icon-pin:after {
+	background: $color-light;
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	top: 10px;
+	left: 27px;
+	border-radius: 50%;
+	content: " ";
+}
+
+.marker {
+	position: absolute;
+	z-index: 97;
+	transform: translate(-50%, -100%);
+
+	.icon {
+		color: $color-secondary;
+		font-size: 48px;
+	}
+
+	&.aarhus {
+		top: 17.6%;
+		left: 26.3%;	
+	}
+	&.stilling {
+		top: 31.6%;
+		left: 19%;
+	}
+	&.kbh {
+		top: 78%;
+		left: 92%;
+	}
+
+
+	.marker__name {
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translate(-50%, 0px);
+		color: $color-light;
+		font-size: $font-size-large;
+	}
+}
+@include media(lap) {
+	.marker {
+
+		.marker__name {
+			font-size: $font-size-medium;
+			top: 90%;
+		}
+
+
+		&.aarhus {
+			top: 38.6%;
+			left: 20%;	
+		}
+		&.stilling {
+			top: 49.6%;
+			left: 12%;
+		}
+		&.kbh {
+			top: 84%;
+			left: 90.3%;
+		}
+
+
+
+		.icon-pin:before {
+			font-size: $font-size-medium*2;
+		}
+		.icon-pin:after {
+			width: 13px;
+			height: 13px;
+			top: 13px;
+			left: 21px;
+		}
+	}
+}
+
+@include media(palm) { 
+
+	.band.band--image .map--palm {
+		display: block;
+		width: 100%;
+	}
+	.band.band--image .map--desk, .band.band--image .map--large, .band.band--image .map--medium {
+		display: none;
+	}
+	.marker {
+		&.aarhus {
+			top: 36.6%;
+			left: 19.3%;	
+		}
+		&.stilling {
+			top: 50.6%;
+			left: 12.8%;
+		}
+		&.kbh {
+			top: 88%;
+			left: 90.3%;
+		}
+		.icon:before {
+			font-size: $font-size-medium*2;
+		}
+
+		.icon-pin:after {
+			top: 14px;
+			left: 21px;
+		}
+		.marker__name {
+			display: none;
+			top: 80%;
+			font-size: 18px;
+		}
+	}
+
+	.band.map .wrap h2 {
+		font-size: 32px;
+        max-width: 200px;
+        margin: 0 auto;
+	}
+}
+
+@include media(palm-small) { 
+
+	.marker {
+		&.aarhus {
+		    top: 36.6%;
+            left: 20.3%;
+		}
+		&.stilling {
+			top: 50.6%;
+			left: 12%;
+		}
+		&.kbh {
+			top: 87%;
+			left: 90.3%;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 340px) {
+	.map h2 {
+		max-width: 200px;
+		margin: 0 auto;
+		line-height: 32px;
+	}
+}

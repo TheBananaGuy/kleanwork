@@ -1,0 +1,166 @@
+.content-wrap {
+    .float {
+        // We use the icons for success/error. See .float--success or error for the icon
+        float: left;
+        position: relative;
+        margin-bottom: $spacing*1.5;
+        width: 100%;
+
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="pass"],
+        input[type="number"],
+        input[type="email"],
+        input[type="date"] {
+            margin-bottom: 0;
+            // Fix for FF hidden placeholder bug
+            height: 100%;
+            max-height: 61px;
+            min-height: 61px;
+        }
+
+        textarea {
+            margin-bottom: 0;
+        }
+
+        &.valid {
+            &:before {
+                //@extend %icon-styling;
+                //@extend .icon-check;
+                position: absolute;
+                top: 50%;
+                right: $spacing/2;
+                left: inherit;
+                transform: translate(-50%, -50%);
+                width: $spacing;
+            }
+        }
+    }
+
+    .float--one-half {
+        width: 100% / 2;
+    }
+
+    .float--one-third {
+        width: 100% / 3;
+    }
+
+    .float--two-third {
+        width: (100% / 3) * 2;
+    }
+    // Helpers and labels
+    %float-inlines {
+        transition: -webkit-transform .35s, opacity .35s;
+        position: absolute;
+        top: 1px;
+        opacity: 1;
+        font-size: $font-size-xsmall;
+        transform: translateY(0%);
+    }
+
+    .float__label {
+        @extend %float-inlines;
+        left: $spacing/2;
+        right: 17px; // scrollbar
+        color: $color-float-text-highlighted;
+        padding-top: 7px;
+    }
+
+    .float--label-hidden {
+
+        .float__label {
+            opacity: 0;
+            transform: translateY(-100%);
+            max-height: 0;
+        }
+    }
+
+    .float__helper {
+        @extend %float-inlines;
+        color: $color-float-help-text;
+        right: $spacing*1.8;
+    }
+
+    .float__input {
+        transition: padding-top .15s;
+        height: 61px;
+        line-height: 1;
+        max-height: 27px;
+        padding-top: 28px;
+        padding-bottom: 16px;
+    }
+
+    .float--label-hidden {
+
+        .float__input {
+            padding-top: 20px;
+            padding-bottom: 16px;
+        }
+    }
+    // --- Success Styling - When input is correct ---------------------------------
+    %float-state {
+        &:before {
+            //.placeholder--icon;
+            position: absolute;
+            left: .025em;
+            line-height: 60px;
+            font-size: 1.75em;
+        }
+
+        .float__input {
+            outline: none;
+        }
+    }
+
+    .float--success {
+        @extend %float-state;
+        //&:extend(.icon--check all);
+        &:before {
+            color: $color-state-success;
+        }
+
+        .float__input {
+            background-color: $color-float-input-success;
+        }
+    }
+
+    .float--error {
+        @extend %float-state;
+        //&:extend(.icon--x all);
+        &:before {
+            color: $color-state-error;
+        }
+
+        .float__input {
+            background-color: $color-float-input-error;
+        }
+    }
+    // Base form styling
+    // ------------------------------------
+    .float__label {
+        left: $spacing/2;
+        color: $color-float-text;
+        // If label is not in focus, it gets this class
+    }
+
+    .float--label-defocus {
+        .float__label {
+            color: $color-float-label;
+        }
+    }
+
+    .float--error {
+        .float__input {
+            background-color: inherit;
+            border: 1px solid $color-error;
+        }
+    }
+
+    .float--success {
+        .float__input {
+            background-color: $color-light;
+            ;
+        }
+    }
+}

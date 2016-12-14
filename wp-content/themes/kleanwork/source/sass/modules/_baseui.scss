@@ -1,0 +1,107 @@
+.boxes {
+    ul {
+        padding-left: 17px;
+    }
+    
+    li {
+        padding-bottom: $spacing/2;
+    }
+
+    ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li:before {
+
+            background: url("/assets/build/images/checkmark.svg");
+            content: " ";
+            width: 16px;
+            height: 12px;
+            display: inline-block;
+            margin-right: 8px;   
+        }
+    }
+
+    .process-link {
+
+        color: $color-secondary;
+        font-weight: 700;
+
+        &:before {
+            background: url("/assets/build/images/pil_hojre_spalte.svg");
+            content: " ";
+            width: 16px;
+            height: 12px;
+            display: inline-block;
+            margin-right: 8px;
+            color: $color-secondary;  
+        }
+    }
+}
+.top--banner .wrap {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.wrap {
+	width: 1200px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.outer-wrap {
+    width: 100%;
+    margin: 0px auto;
+    max-width: 1280px;
+}
+
+a {
+    color: $color-secondary;
+}
+
+form {
+    white-space: nowrap;
+}
+
+.b-lazy {
+    transition: opacity .3s ease;
+    opacity: 0;
+
+    &.b-loaded {
+        opacity: 1;
+    }
+}
+
+@include media(below-desk-wide) {
+    .wrap {
+        width: 900px;
+    }
+}
+
+@include media(below-desk) {
+    .wrap {
+        width: 600px;
+    }
+}
+
+@include media(palm) {
+    .wrap {
+        width: 300px;
+    }
+}
+
+@include media(palm-small) {
+    .wrap {
+        width: 100%;
+        
+    }
+}
+
+
+@media only print {
+    .wrap {
+        width: 80%;
+    }
+}

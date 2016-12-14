@@ -1,0 +1,162 @@
+#pseudo-header {
+    visibility: hidden;
+}
+
+.header {
+    text-align: center;
+    padding: $spacing/2 $spacing;
+    position: relative;
+    background-color: $color-light;
+    transition: all .3s ease;
+    box-shadow: 0 0 1.5rem rgba(0,0,0,.4);
+
+    p {
+        margin-bottom: 0px;
+        font-size: 20px;
+    }
+
+    .social {
+        position: absolute;
+        top: 50%;
+        transform: translate(0px, -50%);
+        left: $spacing;
+        cursor: pointer;
+
+        .icon {
+            font-size: 30px;
+        }
+    }
+
+    .menu {
+        position: absolute;
+        top: 50%;
+        transform: translate(0px, -50%);
+        right: $spacing;
+        cursor: pointer;
+
+        &.open {
+            .icon:before {
+                transform: rotate(180deg) translate(0px, 2px);
+            }
+        }
+
+        .icon {
+            &:before {
+                transition: all .3s ease;
+                transform: translate(-8px, -1px);
+            }
+        }
+    }
+
+    .logo {
+        width: 180px;
+        margin-bottom: -3px;
+        margin-top: 3px;
+        transition: all .3s ease;
+    }
+}
+
+.header__outer {
+
+    &.stick {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 2048;
+    }
+}
+
+.scrolled {
+    .header {
+        padding: $spacing/4 $spacing;
+
+        .logo {
+            width: 130px;
+        }
+    }
+}
+
+.header__menu {
+    background-color: $color-grey;
+    display: none;
+
+    .header__menu__band {
+        text-align: center;
+        //border-bottom: 1px solid $color-light;
+        background: $color-primary;
+
+        a {
+            color: $color-light;
+
+            h2 {
+                padding: $spacing*.9 0px;
+                font-size: 36px;
+                font-weight: normal;
+                margin-bottom: 0px;
+                transition: background-color 300ms ease;
+
+                &:hover {
+                    background-color: rgba($color-dark, 0.3);
+                }
+            }
+        }
+    }
+}
+
+@include media(palm) {
+    .header__menu {
+
+        .header__menu__band {
+
+
+            a {
+
+                h2 {
+                    padding: $spacing/2 0px;
+                    font-size: $font-size-medium;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .header {
+        .logo {
+            width: 130px;
+        }
+
+        .social {
+            .icon {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@include media(palm-small) {
+}
+
+
+
+@media only print {
+    #pseudo-header {
+        display: none;
+    }
+
+    .header {
+        &__outer {
+            position: relative !important;
+        }
+
+        &__menu {
+            display: none;
+        }
+
+        .social,
+        .menu {
+            display: none;
+        }
+    }
+}
