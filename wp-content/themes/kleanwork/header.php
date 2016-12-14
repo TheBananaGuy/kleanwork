@@ -8,6 +8,8 @@
 
 <?php wp_head(); ?>
 		
+		<script type="text/javascript" src="<?php print_source(); ?>main.js"></script>
+
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -17,7 +19,7 @@
 		        <div id="pseudo-header">
 		            <div class="header">
 
-		                    <a href="/"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/assets/build/images/logo.svg" height="66" width="462" alt="Logo" class="logo b-lazy" /></a>
+		                    <a href="/"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" height="66" width="462" alt="Logo" class="logo b-lazy" /></a>
 		                
 		                <div class="social js-open-social">
 

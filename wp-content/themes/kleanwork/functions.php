@@ -65,3 +65,13 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+// print theme source folder function and statics for it
+define("IMAGE_FOLDER", "source/img/");
+
+function print_source($source_folder = null) {
+    $root_folder = esc_url( home_url( '/' ) );
+    $path_folder = "wp-content/themes/kleanwork/";
+    $complete_path = $root_folder . $path_folder . $source_folder;
+    print $complete_path;
+}
