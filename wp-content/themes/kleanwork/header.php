@@ -21,7 +21,7 @@
 				<nav id="menu" role="navigation">
 			        <div id="pseudo-header">
 			            <div class="header">
-			                <a href="<?php print esc_url( home_url( '/' )); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" data-src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" height="66" width="462" alt="Logo" class="logo b-lazy" /></a>
+			                <a href="<?php print esc_url( home_url( '/' )); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img src="<?php print_source(IMAGE_FOLDER); ?>logo.png" height="66" width="462" alt="Logo" class="logo b-lazy" /></a>
 			                <div class="social js-open-social">
 			                    <p><span class="icon icon-some"></span></p>
 			                </div>
@@ -42,7 +42,7 @@
 <?php wp_custom_menu(); ?>
 
 			            <div class="header">
-		                    <a href="<?php print esc_url( home_url( '/' )); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img class="b-lazy logo" src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" data-src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" height="66" width="462" alt="Logo" /></a>
+		                    <a href="<?php print esc_url( home_url( '/' )); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img class="b-lazy logo" src="<?php print_source(IMAGE_FOLDER); ?>logo.png" height="66" width="462" alt="Logo" /></a>
 			                <div class="social js-open-social">
 			                    <p><span class="icon icon-some"></span></p>
 			                </div>

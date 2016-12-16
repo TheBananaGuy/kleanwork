@@ -21,7 +21,9 @@
 	</div>
 </div>
 
-<?php // if(the_field('bonus_area')) {the_field('bonus_area');} ?>
+<?php // if(the_field('bonus_area')) {the_field('bonus_area');} 
+all_the_fields( array("main_one", "main_two", "main_three") );
+?>
 
 						<div class="entry-links"><?php wp_link_pages(); ?></div>
 					</section>

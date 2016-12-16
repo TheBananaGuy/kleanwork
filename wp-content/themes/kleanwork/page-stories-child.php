@@ -1,7 +1,3 @@
-<?php get_header(); ?>
-
-			<section id="content" role="main">
-
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -17,16 +13,15 @@
 
 <?php the_content(); ?>
 
+
+
 <?php // if(the_field('bonus_area')) {the_field('bonus_area');} ?>
 
 						<div class="entry-links"><?php wp_link_pages(); ?></div>
 					</section>
 				</article>
 
+<?php al_the_fields("internship_specialization", "internship_institution"); ?>
+
 <?php // if ( ! post_password_required() ) comments_template( '', true ); ?>
 <?php endwhile; endif; ?>
-
-			</section>
-			
-<?php // get_sidebar(); ?>
-<?php get_footer(); ?>

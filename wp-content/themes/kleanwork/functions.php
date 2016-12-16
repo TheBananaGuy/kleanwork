@@ -66,7 +66,9 @@ return $count;
 }
 }
 
-// print theme source folder function and statics for it
+//                  ADDITIONAL SHEET!
+
+    // print theme source folder function and statics for it
 define("IMAGE_FOLDER", "source/img/");
 
 function print_source($source_folder = null) {
@@ -76,9 +78,7 @@ function print_source($source_folder = null) {
     print $complete_path;
 }
 
-//	custom walker menu class
-
-
+    //	custom walker menu class
 class Walker_Custom_Menu extends Walker_Nav_Menu {
 // replace the <li> starting tag
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -106,4 +106,14 @@ wp_nav_menu( array(
 'menu_class'		=>	'',
 'items_wrap'		=>	'<div id="%1$s" class="%2$s header__menu js-header-menu">%3$s</div>'
 ) );
+}
+
+// printing fields shorteners
+function one_field($name) {
+    if(the_field($name)) {the_field($name); }
+}
+function all_the_fields($names) {
+    foreach($names as $name) {
+        one_field($name);
+    }
 }
