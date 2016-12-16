@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" <?php language_attributes(); ?>>
 
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 
+<?php wp_enqueue_script("jquery"); ?>
 <?php wp_head(); ?>
 		
-		<script type="text/javascript" src="<?php print_source(); ?>main.js"></script>
+		<script type="text/javascript" src="<?php print_source(); ?>scripts/js/libs/jquery-3.1.1.min.js" async></script>
+		<script type="text/javascript" src="<?php print_source(); ?>main.js" async></script>
 
 	</head>
 
@@ -18,17 +20,10 @@
 
 		        <div id="pseudo-header">
 		            <div class="header">
-
-		                    <a href="/"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" height="66" width="462" alt="Logo" class="logo b-lazy" /></a>
-		                
+		                <a href="<?php print esc_url( home_url( '/' )); ?>"><img src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" data-src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" height="66" width="462" alt="Logo" class="logo b-lazy" /></a>
 		                <div class="social js-open-social">
-
 		                    <p><span class="icon icon-some"></span></p>
-
 		                </div>
-
-		                
-
 		                <div class="menu js-open-menu">
 		                    <p>
 		                        <span class="icon icon-menu">
@@ -36,48 +31,19 @@
 		                        </span>
 		                    </p>
 		                </div>
-
-		                
 		            </div>
 		        </div>
-		        <div class="header__menu js-header-menu">
-		                    <div class="header__menu__band">
-		                        <a href="/vores-kompetencer"><h2>VORES KOMPETENCER</h2></a>
-		                    </div>
-		                    <div class="header__menu__band">
-		                        <a href="/the-journey-formular"><h2>BESTIL THE JOURNEY</h2></a>
-		                    </div>
-		                    <div class="header__menu__band">
-		                        <a href="/projekter-cases"><h2>PROJEKTER  &amp; CASES</h2></a>
-		                    </div>
-		                    <div class="header__menu__band">
-		                        <a href="/moed-klean"><h2>M&#216;D KLEAN</h2></a>
-		                    </div>
-		        </div>
+
+<?php wp_custom_menu(); ?>
+
 		        <div id="header-container" class="header__outer stick">
-		            <div class="header__menu js-header-menu">
-		                
-		                        <div class="header__menu__band js-menu-band">
-		                            <a href="/vores-kompetencer"><h2>VORES KOMPETENCER</h2></a>
-		                        </div>
-		                        <div class="header__menu__band js-menu-band">
-		                            <a href="/the-journey-formular"><h2>BESTIL THE JOURNEY</h2></a>
-		                        </div>
-		                        <div class="header__menu__band js-menu-band">
-		                            <a href="/projekter-cases"><h2>PROJEKTER  &amp; CASES</h2></a>
-		                        </div>
-		                        <div class="header__menu__band js-menu-band">
-		                            <a href="/moed-klean"><h2>M&#216;D KLEAN</h2></a>
-		                        </div>
 
-		            </div>
+<?php wp_custom_menu(); ?>
+
 		            <div class="header">
-		                    <a href="/"><img class="b-lazy logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/assets/build/images/logo.svg" height="66" width="462" alt="Logo" /></a>
-		                
+	                    <a href="<?php print esc_url( home_url( '/' )); ?>"><img class="b-lazy logo" src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" data-src="<?php print_source(IMAGE_FOLDER); ?>logo.svg" height="66" width="462" alt="Logo" /></a>
 		                <div class="social js-open-social">
-		                   
 		                    <p><span class="icon icon-some"></span></p>
-		                    
 		                </div>
 		                <div class="menu js-open-menu">
 		                    <p>
@@ -100,7 +66,7 @@
 
 					</div>
 
-<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+
 
 				</nav>
 			</header>

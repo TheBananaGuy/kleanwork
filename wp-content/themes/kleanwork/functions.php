@@ -75,3 +75,35 @@ function print_source($source_folder = null) {
     $complete_path = $root_folder . $path_folder . $source_folder;
     print $complete_path;
 }
+
+//	custom walker menu class
+
+
+class Walker_Custom_Menu extends Walker_Nav_Menu {
+// replace the <li> starting tag
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $output .= sprintf( 
+'
+<div class="header__menu__band js-menu-band"><a href="%s"%s>%s</a></div>
+',
+            $item->url,
+            ( $item->object_id === get_the_ID() ) ? ' class="current"' : '',
+            $item->title
+        );
+    }
+// override this to remove ending <li> tag
+    function end_el(&$output, $item, $depth) 
+    {
+        $output .= '';
+    }
+}
+// create the shortcode
+function wp_custom_menu() {
+wp_nav_menu( array(
+'walker' => new Walker_Custom_Menu(),
+'theme_location'	=>	'main-menu',
+'container'			=>	'',
+'menu_class'		=>	'',
+'items_wrap'		=>	'<div id="%1$s" class="%2$s header__menu js-header-menu">%3$s</div>'
+) );
+}
