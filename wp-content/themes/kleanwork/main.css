@@ -2577,3 +2577,15 @@ form {
 
 .slick-arrow.slick-hidden {
   display: none; }
+
+body {
+  visibility: visible !important; }
+
+.band--opening {
+  color: #000;
+  -webkit-transition: .3s;
+  transition: .3s; }
+
+.band--opening:hover {
+  background-color: #154733;
+  color: #fff; }
