@@ -48,25 +48,30 @@ gulp.task('default', ['vendor', 'css', 'jade', 'js'], function(){
 
 gulp.task('vendor', function() {
 	var FILES = [
-		//BOWER + 'jquery/dist/jquery.js',
-		BOWER + 'jquery-validation/dist/jquery.validate.js'
+		// BOWER + 'jquery/dist/jquery.js',
+		BOWER + 'respond/dest/respond.src.js'
+		// BOWER + 'modernizr/src/Modernizr.js'
 	];
 	gulp.src(FILES)
 		.pipe(concat('vendor.js'))
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(gulp.dest(DIST))
 })
 
 gulp.task('js', function() {
 	var FILES = [
 		BOWER + 'jquery-validation/dist/jquery.validate.js',
+		BOWER + 'perfect-scrollbar/js/perfect-scrollbar.jquery.js',
+		BOWER + 'slick-carousel/slick/slick.js',
+		BOWER + 'bLazy/blazy.js',
+
 		JS + 'libraries/*.js',
 		JS + 'before/*.js',
 		JS + '*.js'
 	];
 	gulp.src(FILES)
 		.pipe(concat('main.js'))
-		.pipe(uglify().on('error', function (error) { console.warn(error.message);  }))
+		// .pipe(uglify().on('error', function (error) { console.warn(error.message);  }))
 		.pipe(gulp.dest(DIST))
 })
 

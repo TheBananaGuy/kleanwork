@@ -2,11 +2,11 @@
  * Interaction design based on:
  * http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users
  */
-jQuery(document).ready(function($) {
+jQuery(document).ready(function() {
 
 
   // Test for placeholder support
-  $.support.placeholder = (function(){
+  jQuery.support.placeholder = (function(){
       var i = document.createElement('input');
       return 'placeholder' in i;
   })();
@@ -14,18 +14,18 @@ jQuery(document).ready(function($) {
 
 
   // Hide labels by default if placeholders are supported
-  if($.support.placeholder) {
+  if(jQuery.support.placeholder) {
     // Caching input/text labels
-    var inputs = $('.js-float').find('input, textarea');
+    var inputs = jQuery('.js-float').find('input, textarea');
 
     inputs.each(function(){
-      var $this = $(this),
-        $parent = $this.parent();
+      var jQuerythis = jQuery(this),
+        jQueryparent = jQuerythis.parent();
 
-      if ( !$.trim( $this.val() ) ) {
-        $parent.addClass('float--label-hidden');
+      if ( !jQuery.trim( jQuerythis.val() ) ) {
+        jQueryparent.addClass('float--label-hidden');
       } else {
-        $parent.addClass('float--label-defocus');
+        jQueryparent.addClass('float--label-defocus');
       }
     });
 
@@ -35,31 +35,31 @@ jQuery(document).ready(function($) {
 
 
       // Cache our selectors
-      var $this = $(this),
-        $parent = $this.parent();
+      var jQuerythis = jQuery(this),
+        jQueryparent = jQuerythis.parent();
 
       if (event.type == 'keyup' || event.type == 'blur') {
-        if( $this.val() == '' ) {
-          $parent.addClass('float--label-hidden');
+        if( jQuerythis.val() == '' ) {
+          jQueryparent.addClass('float--label-hidden');
         } else {
-          $parent.removeClass('float--label-hidden');
+          jQueryparent.removeClass('float--label-hidden');
         }
       }
 
 
       else if (event.type == 'focus') {
-        if ( $.trim( $this.val() ) ) {
-            $parent.removeClass('float--label-defocus');
+        if ( jQuery.trim( jQuerythis.val() ) ) {
+            jQueryparent.removeClass('float--label-defocus');
         }
       }
     });
   }
-  $('.js-bubble').on('click', function(){
-    $(this).find('.bubble__content').toggleClass('is-hidden');
+  jQuery('.js-bubble').on('click', function(){
+    jQuery(this).find('.bubble__content').toggleClass('is-hidden');
   });
 
-  $('.js-toggle-this').on('click', function(){
-    $(this).toggleClass('is-hidden');
+  jQuery('.js-toggle-this').on('click', function(){
+    jQuery(this).toggleClass('is-hidden');
   });
 
 
@@ -80,13 +80,13 @@ jQuery(document).ready(function($) {
     }
   }
 
-  $('.js-float input, .js-float textarea').on('focus', function(){
-    var hint = $(this).data('hint');
-    ToggleHint($(this), hint);
+  jQuery('.js-float input, .js-float textarea').on('focus', function(){
+    var hint = jQuery(this).data('hint');
+    ToggleHint(jQuery(this), hint);
   });
 
-  $('.js-float input, .js-float textarea').on('focusout', function(){
-    ToggleHint($(this));
+  jQuery('.js-float input, .js-float textarea').on('focusout', function(){
+    ToggleHint(jQuery(this));
   });
 
 });

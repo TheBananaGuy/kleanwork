@@ -1,41 +1,42 @@
-$(function() {
+jQuery(function() {
 
-	var menuLength = $('div.js-header-menu').find('div.js-menu-band').length;
+	var menuLength = jQuery('div.js-header-menu').find('div.js-menu-band').length;
     /*
-	$('div.js-header-menu').find('div.js-menu-band').each(function() {
-		var thisIndex = $('div.js-menu-band').index($(this));
+	jQuery('div.js-header-menu').find('div.js-menu-band').each(function() {
+		var thisIndex = jQuery('div.js-menu-band').index(jQuery(this));
 		//alert(thisIndex / (menuLength - 1));
-		$(this).css('background-color', 'rgba(0,0,0,' + thisIndex / (menuLength - 1) + ')');
+		jQuery(this).css('background-color', 'rgba(0,0,0,' + thisIndex / (menuLength - 1) + ')');
 	});
 	*/
-	$('.js-open-menu').on('click', function() {
-		$('div.js-header-menu').slideToggle(550);
-		$(this).toggleClass('open');
+	jQuery('.js-open-menu').on('click', function() {
+		jQuery('div.js-header-menu').slideToggle(550);
+		jQuery(this).toggleClass('open');
 	});
 
 	// Make the header smaller when scrolled down the page
 	checkTopPage();
 
-	$(window).on('scroll', function() {
+	jQuery(window).on('scroll', function() {
 	 	checkTopPage();
 	});
 
 	function checkTopPage() {
-		var scrollPosition = $(window).scrollTop();
+		var scrollPosition = jQuery(window).scrollTop();
 
 		if(scrollPosition === 0) {
-			$('#header-container').removeClass('scrolled');
-			$('#pseudo-header').removeClass('scrolled');
+			jQuery('#header-container').removeClass('scrolled');
+			jQuery('#pseudo-header').removeClass('scrolled');
 		}
 		else {
-			$('#header-container').addClass('scrolled');
-			$('#pseudo-header').addClass('scrolled');
+			jQuery('#header-container').addClass('scrolled');
+			jQuery('#pseudo-header').addClass('scrolled');
 		}
 	}
 
-	$('.vid').on('canplay', function() {
-		$(this).css('opacity', 1);
+	jQuery('.vid').on('canplay', function() {
+		jQuery(this).css('opacity', 1);
 	});
 
 
 });
+console.log("BITCH WORK!");

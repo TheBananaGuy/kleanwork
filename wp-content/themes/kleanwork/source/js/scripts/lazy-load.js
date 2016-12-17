@@ -1,29 +1,29 @@
-$(window).load(function () {
+jQuery(window).load(function () {
     var isRetina = window.devicePixelRatio > 1;
-    var viewport = $('body').innerWidth();
+    var viewport = jQuery('body').innerWidth();
     var divideby = 200;
     if (viewport < 1000) divideby = 100;
 
     // trying to set a proper width for images, taking into account hidpi screens
-    $("img.b-lazy, img.slick-lazy").each(function () {
-        var $t = $(this);
+    jQuery("img.b-lazy, img.slick-lazy").each(function () {
+        var jQueryt = jQuery(this);
         var dataAttr = "data-src";
-        if ($t.hasClass("slick-lazy")) dataAttr = "data-lazy";
-        var src = $t.attr(dataAttr);
+        if (jQueryt.hasClass("slick-lazy")) dataAttr = "data-lazy";
+        var src = jQueryt.attr(dataAttr);
         if (src !== undefined && src.indexOf("rnd=") > 0 && src.indexOf("width=") < 0) {
-            var tagWidth = $t.attr("width");
-            var tagHeight = $t.attr("height");
-            var currentWidth = $t.width();
+            var tagWidth = jQueryt.attr("width");
+            var tagHeight = jQueryt.attr("height");
+            var currentWidth = jQueryt.width();
             if (tagWidth == undefined || currentWidth > viewport || tagWidth > viewport) {
                 if (currentWidth > viewport || tagWidth > viewport) currentWidth = viewport;
-                $(this).width(currentWidth);
+                jQuery(this).width(currentWidth);
                 var newHeight = Math.floor((currentWidth / tagWidth) * tagHeight);
-                $(this).css("maxHeight", newHeight);
+                jQuery(this).css("maxHeight", newHeight);
                 currentWidth = Math.ceil(currentWidth / divideby) * divideby;
             }
             var newSrc = src + "&width=" + currentWidth;
-            if (isRetina && $t.hasClass("b-lazy")) newSrc += "|" + src + "&width=" + (currentWidth * 2);
-            $t.attr(dataAttr, newSrc);
+            if (isRetina && jQueryt.hasClass("b-lazy")) newSrc += "|" + src + "&width=" + (currentWidth * 2);
+            jQueryt.attr(dataAttr, newSrc);
         }
     });
 
@@ -69,7 +69,7 @@ $(window).load(function () {
         bLazy.revalidate();
     }, 100);
 
-    $('div[data-slick]').slick({
+    jQuery('div[data-slick]').slick({
         'slidesToShow': 1,
         'slidesToScroll': 1,
         'autoplay': false,
@@ -82,14 +82,14 @@ $(window).load(function () {
     });
 
     //TODO: script to load background images after load, should take into account scrolling
-    $(".b-lazy-bg").each(function () {
-        var s = $(this).attr("data-src");
+    jQuery(".b-lazy-bg").each(function () {
+        var s = jQuery(this).attr("data-src");
         if (viewport > 0) {
             if (isRetina) viewport = viewport * 2;
             var width = Math.ceil(viewport / divideby) * divideby;
             if (s.indexOf("rnd=") > 0 && s.indexOf("width=") < 0) s += "&width=" + width;
         }
-        $(this).attr("style", "background-image: url(" + s.replace(/ /g, /%20/) + ");");
+        jQuery(this).attr("style", "background-image: url(" + s.replace(/ /g, /%20/) + ");");
     });
 
     // load tracking scripts after other scripts, add font

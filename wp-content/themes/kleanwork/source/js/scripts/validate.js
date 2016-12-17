@@ -1,5 +1,5 @@
-jQuery(document).ready(function($) {
-	$('.js-newsletter-form').validate({
+jQuery(document).ready(function() {
+	jQuery('.js-newsletter-form').validate({
 		rules: {
 			email: {
 				required: true,
@@ -8,17 +8,17 @@ jQuery(document).ready(function($) {
 		},
 		messages: {
 			email: {
-				required: $('.js-newsletter-form').data('required-email'),
-				email: 	  $('.js-newsletter-form').data('invalid-email')
+				required: jQuery('.js-newsletter-form').data('required-email'),
+				email: 	  jQuery('.js-newsletter-form').data('invalid-email')
 			}
 		}
 	});
 
-	$('.js-newsletter-form input').keydown(function() {
-		$('.js-newsletter-form').validate().resetForm();
+	jQuery('.js-newsletter-form input').keydown(function() {
+		jQuery('.js-newsletter-form').validate().resetForm();
 	})
 
-	if($('.js-form').data('lang') === 'daDK') {
+	if(jQuery('.js-form').data('lang') === 'daDK') {
 
 		// Custom error messages
 		jQuery.extend(jQuery.validator.messages, {
@@ -44,14 +44,14 @@ jQuery(document).ready(function($) {
 
 
 	jQuery.validator.addMethod("accept", function(value, element, param) {
-		return value.match(new RegExp("^" + param + "$"));
+		return value.match(new RegExp("^" + param + "jQuery"));
 	}, "Please insert a valid value");
 
 
 
 
 
-	$('.js-form').validate({
+	jQuery('.js-form').validate({
 		ignore: '.ignore',
 		debug: true,
 
@@ -59,13 +59,13 @@ jQuery(document).ready(function($) {
 		}, // end rules
 
 		submitHandler: function(form) {
-		    var action = $(form).attr('action');
-		    var redirectUrl = $(form).attr("data-redirect");
+		    var action = jQuery(form).attr('action');
+		    var redirectUrl = jQuery(form).attr("data-redirect");
 
-		    var dataJSON = $(form).serializeFormJSON();
+		    var dataJSON = jQuery(form).serializeFormJSON();
 		    var dataJSONStringified = JSON.stringify(dataJSON);
 
-		    $.ajax({
+		    jQuery.ajax({
 		        method: "POST",
 		        url: action,
                 dataType: "text",
@@ -84,25 +84,25 @@ jQuery(document).ready(function($) {
 // ------------- check for valid and insert valid checkmark
 // ------------------------------------------------------------------
 
-	$('.js-base-validation input').on('change blur', function() {
-		if( $(this).attr('type') !== 'radio' || $(this).attr('type') !== 'checkbox') {
+	jQuery('.js-base-validation input').on('change blur', function() {
+		if( jQuery(this).attr('type') !== 'radio' || jQuery(this).attr('type') !== 'checkbox') {
 
 			consoleLog('is not radio or checkbox');
 
-			$(this).valid();
+			jQuery(this).valid();
 
-			if($(this).hasClass('valid')) {
+			if(jQuery(this).hasClass('valid')) {
 				consoleLog('has valid class');
 
-				$(this).parents('.float')
+				jQuery(this).parents('.float')
 			.removeClass('float--label-hidden float--error')
 			.addClass('float--label-defocus float--success');
 
-				$(this).parents('.float').addClass('valid');
-				consoleLog($(this).parents('float'));
+				jQuery(this).parents('.float').addClass('valid');
+				consoleLog(jQuery(this).parents('float'));
 			}
 			else {
-				$(this).parents('.float').removeClass('valid');
+				jQuery(this).parents('.float').removeClass('valid');
 			}
 			
 		}
@@ -114,12 +114,12 @@ jQuery(document).ready(function($) {
 
 });
 
-(function ($) {
-    $.fn.serializeFormJSON = function () {
+(function (jQuery) {
+    jQuery.fn.serializeFormJSON = function () {
 
         var o = {};
         var a = this.serializeArray();
-        $.each(a, function () {
+        jQuery.each(a, function () {
             if (o[this.name]) {
                 if (!o[this.name].push) {
                     o[this.name] = [o[this.name]];
