@@ -2459,7 +2459,7 @@ form {
   transition: opacity .3s ease;
   opacity: 0; }
 
-.b-lazy.b-loaded {
+.b-lazy.b-loaded, .logo {
   opacity: 1; }
 
 @media all and (max-width: 1280px) {

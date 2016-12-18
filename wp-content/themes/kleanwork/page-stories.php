@@ -2,41 +2,55 @@
 
 			<section id="content" role="main">
 
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<header class="header">
+					<h1 class="entry-title"><?php the_title(); ?></h1>
+
+<?php // edit_post_link(); ?>
+
+					</header>
+					<section class="entry-content">
+
+<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+
+<?php the_content(); ?>
+
+
+
+<?php // if(the_field('bonus_area')) {the_field('bonus_area');} ?>
+
+						<div class="entry-links"><?php wp_link_pages(); ?></div>
+					</section>
+				</article>
+
+<?php // if ( ! post_password_required() ) comments_template( '', true ); ?>
+<?php endwhile; endif; ?>
+
+
+
 <?php
+// global $post;
+$child_pages_query_args = array(
+    'post_type'   => 'page',
+    'post_parent' => $post->ID,
+    'orderby'     => 'menu_order'
+);
 
-if( $post->post_parent !== 0 ) {
-	$child_template = 'page-'.get_post_ancestors($post->post_name).'-child';
-    get_template_part($child_template);
-} else {
-    get_template_part('page-stories-main');
-}
+$child_pages = new WP_Query( $child_pages_query_args );
 
-?>
+if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) : $child_pages->the_post();
+    ?>
+    <div class="child-thumb">
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    </div>
+    <?php
+endwhile; endif;
 
-<?php
-/* Get the Page Slug to Use as a Body Class, this will only return a value on pages! */
-$class = '';
-/* is it a page */
-if( is_page() ) { 
-	global $post;
-        /* Get an array of Ancestors and Parents if they exist */
-	$parents = get_post_ancestors( $post->ID );
-        /* Get the top Level page->ID count base 1, array base 0 so -1 */ 
-	$id = ($parents) ? $parents[count($parents)-1]: $post->ID;
-	/* Get the parent and set the $class with the page slug (post_name) */
-        $parent = get_post( $id );
-	$class = $parent->post_name;
-}
-?>
-
-<?php
-global $post;
-$parents = get_post_ancestors( $post->ID );
-/* Get the ID of the 'top most' Page if not return current page ID */
-$id = ($parents) ? $parents[count($parents)-1]: $post->ID;
-if(has_post_thumbnail( $id )) {
-	get_the_post_thumbnail( $id, 'thumbnail');
-}
+// Be kind; rewind
+wp_reset_postdata();
 ?>
 
 			</section>

@@ -14,12 +14,14 @@
 					<section class="entry-content">
 
 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
-<div class="band">
-	<div class="wrap">
+
+						<div class="band">
+							<div class="wrap">
+
 <?php the_content(); ?>
 		
-	</div>
-</div>
+							</div>
+						</div>
 
 <?php // if(the_field('bonus_area')) {the_field('bonus_area');} 
 all_the_fields( array("main_one", "main_two", "main_three") );

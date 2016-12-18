@@ -4,3 +4,20 @@
 // Document them, after you write them!
 // Read this for info: http://csswizardry.com/2013/04/shame-css/
 // --------------------------------------------------------------------------------
+
+body {
+    visibility: visible!important;
+}
+
+.band--opening {
+	color: $color-dark;
+	transition: $time-slow;
+	&:hover {
+		background-color: $color-primary;
+		color: $color-light;
+	}
+}
+
+.logo {
+	opacity: 1;
+}

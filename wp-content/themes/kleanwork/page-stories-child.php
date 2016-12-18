@@ -21,7 +21,7 @@
 					</section>
 				</article>
 
-<?php al_the_fields("internship_specialization", "internship_institution"); ?>
+<?php all_the_fields( array("internship_specialization", "internship_institution") ); ?>
 
 <?php // if ( ! post_password_required() ) comments_template( '', true ); ?>
 <?php endwhile; endif; ?>

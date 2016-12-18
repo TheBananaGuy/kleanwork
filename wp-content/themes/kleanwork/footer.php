@@ -1,5 +1,5 @@
 	
-		    <footer class="band band--banner band--dark b-lazy-bg" data-src="/media/1025/footer_background.jpg?anchor=center&amp;mode=crop&amp;rnd=131157289330000000">
+		    <footer class="band band--banner band--dark b-lazy-bg">
 		        <div class="wrap">
 
 		            <h2>FANG OS P&#197;</h2>
@@ -58,5 +58,6 @@
 		    </footer>
 		</div>
 		<?php wp_footer(); ?>
+		<script type="text/javascript" src="<?php print_source(); ?>main.js" async></script>
 	</body>
 </html>

@@ -9,8 +9,8 @@
 <?php wp_enqueue_script("jquery"); ?>
 <?php wp_head(); ?>
 		
-		<script type="text/javascript" src="<?php print_source(); ?>scripts/js/libs/jquery-3.1.1.min.js" async></script>
-		<script type="text/javascript" src="<?php print_source(); ?>main.js" async></script>
+		<!-- <script type="text/javascript" src="<?php print_source(); ?>source/js/libs/jquery-3.1.1.min.js" async></script> -->
+		<script type="text/javascript" src="<?php print_source(); ?>vendor.js" async></script>
 
 	</head>
 
@@ -22,9 +22,9 @@
 			        <div id="pseudo-header">
 			            <div class="header">
 			                <a href="<?php print esc_url( home_url( '/' )); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img src="<?php print_source(IMAGE_FOLDER); ?>logo.png" height="66" width="462" alt="Logo" class="logo b-lazy" /></a>
-			                <div class="social js-open-social">
-			                    <p><span class="icon icon-some"></span></p>
-			                </div>
+<?php	//		                <div class="social js-open-social">
+		//	                    <p><span class="icon icon-some"></span></p>		coming soon
+		//	                </div> ?>
 			                <div class="menu js-open-menu">
 			                    <p>
 			                        <span class="icon icon-menu">
@@ -43,9 +43,9 @@
 
 			            <div class="header">
 		                    <a href="<?php print esc_url( home_url( '/' )); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img class="b-lazy logo" src="<?php print_source(IMAGE_FOLDER); ?>logo.png" height="66" width="462" alt="Logo" /></a>
-			                <div class="social js-open-social">
-			                    <p><span class="icon icon-some"></span></p>
-			                </div>
+<?php	//		                <div class="social js-open-social">
+		//	                    <p><span class="icon icon-some"></span></p>		coming soon
+		//	                </div> ?>
 			                <div class="menu js-open-menu">
 			                    <p>
 			                        <span class="icon icon-menu">
