@@ -8,7 +8,8 @@
 					<header class="js-top-banner">
 						<div class="band band--banner band--dark js-banner-picture band--picture js-show-picture-banner b-lazy-bg" <?php if ( has_post_thumbnail() ) { print('style="background-image:url(' . get_the_post_thumbnail_url() . ');"'); } ?> >
 							<div class="wrap">
-								<h1 class="entry-title"><?php the_title(); ?></h1>
+								<h1 class="entry-title"><?php one_field('main_heading'); ?></h1>
+								<p><?php one_field('main_subheading'); ?></p>
 							</div>
 							
 						</div>
@@ -25,13 +26,28 @@
 						<div class="band">
 							<div class="wrap">
 
-<?php the_content(); ?>
+
 		
 							</div>
 						</div>
 
 <?php // if(the_field('bonus_area')) {the_field('bonus_area');} 
-all_the_fields( array("main_one", "main_two", "main_three") );
+// all_the_fields( array("main_one", "main_two", "main_three") );
+?>
+
+<?php
+for ($counter=1; $counter<4; $counter++) {
+	$partition_heading = "main_".$counter."_heading";
+	$partition_content = "main_".$counter."_content";
+	print('
+						<div class="band">
+							<div class="wrap">
+								<h2>'); one_field($partition_heading); print('</h2>
+								'); one_field($partition_content);	 print('
+							</div>
+						</div>
+	');
+}
 ?>
 
 						<div class="entry-links"><?php wp_link_pages(); ?></div>
