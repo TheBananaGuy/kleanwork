@@ -9,11 +9,39 @@
 					</header>
 					<section class="entry-content">
 
-<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+<?php // if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 
-<?php the_content(); ?>
+<?php // the_content(); ?>
 
-
+				<div class="content-wrap">
+					<div class="band band--image band--dark">
+						<img class="b-lazy b-loaded" src="<?php the_post_thumbnail_url(); ?>">
+					</div>
+					<div class="band band--quote">
+						<div class="wrap grid-group">
+							<div class="quote__content icon-citat grid size-12">
+								<div><?php one_field('internship_testimonial'); ?></div>
+							</div>
+						</div>
+					</div>
+					<div class="band band--article">
+						<div class="wrap">
+							<div class="grid-group">
+								<div class="grid size-8 size-12--portable">
+									
+									<?php one_field('internship_story'); ?>
+								</div>
+								<div class="grid size-4 size-12--portable boxes">
+									<div class="line-header"></div>
+									<h2><?php one_field('internship_specialization'); ?></h2>
+									<ul>
+										<li><?php one_field('internship_institution'); ?></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 <?php // if(the_field('bonus_area')) {the_field('bonus_area');} ?>
 
@@ -21,7 +49,7 @@
 					</section>
 				</article>
 
-<?php all_the_fields( array("internship_specialization", "internship_institution") ); ?>
+<?php // all_the_fields( array("internship_specialization", "internship_institution") ); ?>
 
 <?php // if ( ! post_password_required() ) comments_template( '', true ); ?>
 <?php endwhile; endif; ?>
