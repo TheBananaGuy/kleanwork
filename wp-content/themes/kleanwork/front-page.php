@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-			<section id="content" role="main">
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -8,7 +7,7 @@
 					<header class="js-top-banner">
 						<div class="band band--banner band--dark js-banner-picture band--picture js-show-picture-banner b-lazy-bg" <?php if ( has_post_thumbnail() ) { print('style="background-image:url(' . get_the_post_thumbnail_url() . ');"'); } ?> >
 							<div class="wrap">
-								<h1 class="entry-title"><?php one_field('main_heading'); ?></h1>
+								<h2 class="entry-title"><?php one_field('main_heading'); ?></h2>
 								<p><?php one_field('main_subheading'); ?></p>
 							</div>
 							
@@ -57,7 +56,6 @@ for ($counter=1; $counter<4; $counter++) {
 <?php // if ( ! post_password_required() ) comments_template( '', true ); ?>
 <?php endwhile; endif; ?>
 
-			</section>
 			
 <?php // get_sidebar(); ?>
 <?php get_footer(); ?>

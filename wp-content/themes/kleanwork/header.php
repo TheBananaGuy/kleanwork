@@ -5,20 +5,17 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-		<meta description="<?php bloginfo( 'description' ); ?>">
+		<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 <?php wp_enqueue_script("jquery"); ?>
 <?php wp_head(); ?>
-		
-		<!-- <script type="text/javascript" src="<?php print_source(); ?>source/js/libs/jquery-3.1.1.min.js" async></script> -->
 		<script type="text/javascript" src="<?php print_source(); ?>vendor.js" async></script>
 
 	</head>
 
 	<body <?php body_class(); ?>>
 
-		<div id="wrapper" class="hfeed">
-			<header id="header" role="banner">
-				<nav id="menu" role="navigation">
+			<header id="header">
+				<nav id="menu">
 			        <div id="pseudo-header">
 			            <div class="header">
 			                <a href="<?php print esc_url( home_url( '/' )); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img src="<?php print_source(IMAGE_FOLDER); ?>logo.png" height="66" width="462" alt="Logo" class="logo b-lazy" /></a>

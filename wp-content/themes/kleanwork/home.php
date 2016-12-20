@@ -2,10 +2,9 @@
 $page_for_posts = get_option('page_for_posts');
 ?>
 
-			<section id="content" role="main">
 				<div class="band band--dark">
 					<div class="wrap">
-						<h1><?php if(the_field('openings_heading', $page_for_posts)) {the_field('openings_heading', $page_for_posts);} ?></h1>
+						<h2><?php if(the_field('openings_heading', $page_for_posts)) {the_field('openings_heading', $page_for_posts);} ?></h2>
 						<?php if(the_field('openings_content', $page_for_posts)) {the_field('openings_content', $page_for_posts);} ?>
 					</div>
 				</div>
@@ -39,7 +38,6 @@ $page_for_posts = get_option('page_for_posts');
 <?php // if ( ! post_password_required() ) comments_template( '', true ); ?>
 <?php endwhile; endif; ?>
 
-			</section>
 			
 <?php // get_sidebar(); ?>
 <?php get_footer(); ?>
