@@ -117,3 +117,15 @@ function all_the_fields($names) {
         one_field($name);
     }
 }
+function surround_one_field ($name, $start_tag = '', $end_tag = '') {
+    if (the_field($name)) {
+        print ($start_tag); the_field($name); print ($end_tag);
+    }
+}
+function surround_all_fields ($names, $start_tags = '', $end_tags = '') {
+    foreach ($names as $name) {
+        if (the_field($name)) {
+            print ($start_tags); the_field($name); print ($end_tags);
+        }
+    }
+}
