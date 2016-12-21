@@ -110,22 +110,20 @@ wp_nav_menu( array(
 
 // printing fields shorteners
 function one_field($name) {
-    if(the_field($name)) {the_field($name); }
+    if(get_field($name)) {the_field($name); }
 }
 function all_the_fields($names) {
     foreach($names as $name) {
         one_field($name);
     }
 }
-function surround_one_field ($name, $start_tag = '', $end_tag = '') {
-    if (the_field($name)) {
-        print ($start_tag); the_field($name); print ($end_tag);
+function surround_one_field($name, $start_tag = '', $end_tag = '') {
+    if (get_field($name)) {
+        print($start_tag); the_field($name); print($end_tag);
     }
 }
-function surround_all_fields ($names, $start_tags = '', $end_tags = '') {
+function surround_all_fields($names, $start_tags = '', $end_tags = '') {
     foreach ($names as $name) {
-        if (the_field($name)) {
-            print ($start_tags); the_field($name); print ($end_tags);
-        }
+        surround_one_field($name, $start_tags, $end_tags);
     }
 }

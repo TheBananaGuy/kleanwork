@@ -34,7 +34,7 @@
 									<div class="line-header"></div>
 									<h2><?php one_field('internship_specialization'); ?></h2>
 									<ul>
-										<li><?php one_field('internship_institution'); ?></li>
+										<?php surround_one_field('internship_institution', '<li>', '</li>'); ?>
 									</ul>
 								</div>
 							</div>
