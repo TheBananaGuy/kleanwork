@@ -25,7 +25,7 @@ $page_for_posts = get_option('page_for_posts');
 
 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 
-<?php the_content(); ?>
+<?php surround_one_field('opening_short', '<h3>', '</h3>'); ?>
 
 									<div class="entry-links"><?php wp_link_pages(); ?></div>
 								</section>
