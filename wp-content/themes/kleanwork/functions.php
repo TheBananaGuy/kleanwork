@@ -68,7 +68,8 @@ return $count;
 
 //                  ADDITIONAL SHEET!
 
-    // print theme source folder function and statics for it
+    // GET THE SOURCE FOLDER FOR THEM IMAGES
+
 define("IMAGE_FOLDER", "source/img/");
 
 function print_source($source_folder = null) {
@@ -78,7 +79,8 @@ function print_source($source_folder = null) {
     print $complete_path;
 }
 
-    //	custom walker menu class
+    //	ADAPTING THE MENU BY MAKING A WALKER CLASS EXTENSION
+
 class Walker_Custom_Menu extends Walker_Nav_Menu {
 // replace the <li> starting tag
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -97,6 +99,7 @@ class Walker_Custom_Menu extends Walker_Nav_Menu {
         $output .= '';
     }
 }
+
 // create the shortcode
 function wp_custom_menu() {
 wp_nav_menu( array(
@@ -108,22 +111,44 @@ wp_nav_menu( array(
 ) );
 }
 
-// printing fields shorteners
+    // AAL TEH KUSTOM FEELD FUNKTEONZ
+
+// check existence and and apply the base printing method
 function one_field($name) {
     if(get_field($name)) {the_field($name); }
 }
+
+// do the same for an array of selected fields
 function all_the_fields($names) {
     foreach($names as $name) {
         one_field($name);
     }
 }
+
+// do the same for an enumerated group of fields (must start from a plain 1, not 01)
+function field_loop($field_name) {
+    for ($counter = 1; get_field($field_name.$counter); $counter++) {
+        one_field($field_name.$counter);
+    }
+}
+
+// optional surrounding tags for step one
 function surround_one_field($name, $start_tag = '', $end_tag = '') {
     if (get_field($name)) {
         print($start_tag); the_field($name); print($end_tag);
     }
 }
+
+// optional surrounding tags for step two
 function surround_all_fields($names, $start_tags = '', $end_tags = '') {
     foreach ($names as $name) {
         surround_one_field($name, $start_tags, $end_tags);
+    }
+}
+
+// optional surrounding tags for step three
+function surround_field_loop ($field_name, $start_tags = '', $end_tags = '') {
+    for ($counter = 1; get_field($field_name.$counter); $counter++) {
+        surround_one_field($field_name.$counter, $start_tags, $end_tags);
     }
 }
