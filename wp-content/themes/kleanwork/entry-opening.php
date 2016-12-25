@@ -12,7 +12,7 @@
 <!-- 					<div class="band band--dark band--quote">
 						<div class="wrap grid-group">
 							<div class="quote__content icon-citat grid size-12">
-								<div><?php one_field('opening_short'); ?></div>
+								<div><?php // one_field('opening_short'); ?></div>
 							</div>
 						</div>
 					</div> -->
@@ -25,10 +25,10 @@
 								</div>
 								<div class="grid size-4 size-12--portable boxes">
 									<div class="line-header"></div>
-									<h2><?php // one_field('internship_specialization'); ?></h2>
+									<h2><?php one_field('opening_type'); ?></h2>
 									<ul>
-										<?php // surround_one_field('internship_institution', '<li>', '</li>'); ?>
-										<?php surround_field_loop('test', '<li>', '</li>'); ?>
+										<?php  surround_one_field('opening_location', '<li>Location: ', '</li>'); ?>
+										<?php // surround_field_loop('test', '<li>', '</li>'); ?>
 									</ul>
 								</div>
 							</div>

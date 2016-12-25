@@ -1,5 +1,5 @@
 	
-		    <footer class="band band--banner band--dark b-lazy-bg">
+		    <footer class="band band--banner band--dark b-lazy-bg" style="background-image: url(<?php  print_source(IMAGE_FOLDER); ?>foot--dark.jpg);">
 		        <div class="wrap">
 
 		            <h2>GET IN TOUCH</h2>
@@ -59,5 +59,6 @@
 		</div>
 		<?php wp_footer(); ?>
 		<script type="text/javascript" src="<?php print_source(); ?>main.js" async></script>
+		<div class="konami-container"></div>
 	</body>
 </html>

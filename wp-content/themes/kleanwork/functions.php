@@ -135,7 +135,7 @@ function field_loop($field_name) {
 // optional surrounding tags for step one
 function surround_one_field($name, $start_tag = '', $end_tag = '') {
     if (get_field($name)) {
-        print($start_tag); the_field($name); print($end_tag);
+        echo $start_tag.get_field($name).$end_tag;
     }
 }
 

@@ -34,7 +34,10 @@
 									<div class="line-header"></div>
 									<h2><?php one_field('internship_specialization'); ?></h2>
 									<ul>
-										<?php surround_one_field('internship_institution', '<li>', '</li>'); ?>
+										<?php surround_one_field('internship_institution', '<li>Supervised by ', '</li>'); ?>
+										<?php surround_one_field('internship_website', '<li>Portfolio: ', '</li>'); ?>
+										<?php surround_one_field('internship_email', '<li>Contact email: ', '</li>'); ?>
+										<?php surround_one_field('internship_phone', '<li>Phone: ', '</li>'); ?>
 									</ul>
 								</div>
 							</div>
