@@ -26,7 +26,7 @@
 
 		            <p class="manchet">Want to keep up to date with the latest trends and what we are puttering with? <br/>Sign up for our newsletter</p>
 
-	                <form method="post" action="http://client2.mailmailmail.net/form.php?form=1486" data-invalid-email="Ugyldig email adresse" data-required-email="Feltet er p&#229;kr&#230;vet" onsubmit=" return CheckForm(this); " class="newsletter newsletter-subscription-form js-newsletter-form">
+	                <form method="post" action="http://client2.mailmailmail.net/form.php?form=1486" data-invalid-email="Incorrect email address" data-required-email="Feltet er p&#229;kr&#230;vet" onsubmit=" return CheckForm(this); " class="newsletter newsletter-subscription-form js-newsletter-form">
 
 	                    <input type="email" name="email" class="mod--cutoff-right" required placeholder="example@mail.com" />
 	                    <button type="submit" class="button button--secondary mod--cutoff-left">Subscribe</button>
