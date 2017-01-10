@@ -1016,12 +1016,12 @@ address, blockquote, dl, fieldset, figure, hgroup, hr, ol, p, pre, table, ul {
   padding: 30px 60px;
   margin: 60px 30px; }
 
-.button.mod--cutoff-left, .content-wrap input[type=text].mod--cutoff-left, .content-wrap input[type=tel].mod--cutoff-left, .content-wrap input[type=email].mod--cutoff-left, .content-wrap input[type=pass].mod--cutoff-left, .content-wrap input[type=date].mod--cutoff-left, .content-wrap input[type=number].mod--cutoff-left, .content-wrap textarea.mod--cutoff-left, footer input[type=text].mod--cutoff-left, footer input[type=tel].mod--cutoff-left, footer input[type=email].mod--cutoff-left, footer input[type=password].mod--cutoff-left, footer input[type=search].mod--cutoff-left, footer textarea.mod--cutoff-left {
+.button.mod--cutoff-left, .content-wrap input[type=text].mod--cutoff-left, .content-wrap input[type=tel].mod--cutoff-left, .content-wrap input[type=email].mod--cutoff-left, .content-wrap input[type=pass].mod--cutoff-left, .content-wrap input[type=date].mod--cutoff-left, .content-wrap input[type=number].mod--cutoff-left, .content-wrap select.mod--cutoff-left, .content-wrap textarea.mod--cutoff-left, footer input[type=text].mod--cutoff-left, footer input[type=tel].mod--cutoff-left, footer input[type=email].mod--cutoff-left, footer input[type=password].mod--cutoff-left, footer input[type=search].mod--cutoff-left, footer textarea.mod--cutoff-left {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-left: -2px; }
 
-.button.mod--cutoff-right, .content-wrap input[type=text].mod--cutoff-right, .content-wrap input[type=tel].mod--cutoff-right, .content-wrap input[type=email].mod--cutoff-right, .content-wrap input[type=pass].mod--cutoff-right, .content-wrap input[type=date].mod--cutoff-right, .content-wrap input[type=number].mod--cutoff-right, .content-wrap textarea.mod--cutoff-right, footer input[type=text].mod--cutoff-right, footer input[type=tel].mod--cutoff-right, footer input[type=email].mod--cutoff-right, footer input[type=password].mod--cutoff-right, footer input[type=search].mod--cutoff-right, footer textarea.mod--cutoff-right {
+.button.mod--cutoff-right, .content-wrap input[type=text].mod--cutoff-right, .content-wrap input[type=tel].mod--cutoff-right, .content-wrap input[type=email].mod--cutoff-right, .content-wrap input[type=pass].mod--cutoff-right, .content-wrap input[type=date].mod--cutoff-right, .content-wrap input[type=number].mod--cutoff-right, .content-wrap select.mod--cutoff-right, .content-wrap textarea.mod--cutoff-right, footer input[type=text].mod--cutoff-right, footer input[type=tel].mod--cutoff-right, footer input[type=email].mod--cutoff-right, footer input[type=password].mod--cutoff-right, footer input[type=search].mod--cutoff-right, footer textarea.mod--cutoff-right {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   margin-right: -2px; }
@@ -1067,7 +1067,7 @@ address, blockquote, dl, fieldset, figure, hgroup, hr, ol, p, pre, table, ul {
   margin-bottom: 60px;
   max-width: 35rem; }
 
-.content-wrap input[type=text], .content-wrap input[type=tel], .content-wrap input[type=email], .content-wrap input[type=pass], .content-wrap input[type=date], .content-wrap input[type=number], .content-wrap textarea {
+.content-wrap input[type=text], .content-wrap input[type=tel], .content-wrap input[type=email], .content-wrap input[type=pass], .content-wrap input[type=date], .content-wrap input[type=number], .content-wrap select, .content-wrap textarea {
   display: block;
   width: 100%;
   max-width: 35rem;
@@ -1077,17 +1077,17 @@ address, blockquote, dl, fieldset, figure, hgroup, hr, ol, p, pre, table, ul {
   border: 1px dashed #e6e6e6;
   border-radius: 5px; }
 
-.content-wrap input[type=text]:required, .content-wrap input[type=tel]:required, .content-wrap input[type=email]:required, .content-wrap input[type=pass]:required, .content-wrap input[type=date]:required, .content-wrap input[type=number]:required, .content-wrap textarea:required {
+.content-wrap input[type=text]:required, .content-wrap input[type=tel]:required, .content-wrap input[type=email]:required, .content-wrap input[type=pass]:required, .content-wrap input[type=date]:required, .content-wrap input[type=number]:required, .content-wrap select:required, .content-wrap textarea:required {
   border: 1px solid #bfbfbf; }
 
-.content-wrap input[type=text]:focus, .content-wrap input[type=tel]:focus, .content-wrap input[type=email]:focus, .content-wrap input[type=pass]:focus, .content-wrap input[type=date]:focus, .content-wrap input[type=number]:focus, .content-wrap textarea:focus {
+.content-wrap input[type=text]:focus, .content-wrap input[type=tel]:focus, .content-wrap input[type=email]:focus, .content-wrap input[type=pass]:focus, .content-wrap input[type=date]:focus, .content-wrap input[type=number]:focus, .content-wrap select:focus, .content-wrap textarea:focus {
   border-color: #39C7ED;
   outline: 0; }
 
-.content-wrap input[type=text].error, .content-wrap input[type=tel].error, .content-wrap input[type=email].error, .content-wrap input[type=pass].error, .content-wrap input[type=date].error, .content-wrap input[type=number].error {
+.content-wrap input[type=text].error, .content-wrap input[type=tel].error, .content-wrap input[type=email].error, .content-wrap input[type=pass].error, .content-wrap input[type=date].error, .content-wrap input[type=number].error, .content-wrap select.error {
   border: 1px solid #ff6101; }
 
-.content-wrap input[type=text].valid, .content-wrap input[type=tel].valid, .content-wrap input[type=email].valid, .content-wrap input[type=pass].valid, .content-wrap input[type=date].valid, .content-wrap input[type=number].valid {
+.content-wrap input[type=text].valid, .content-wrap input[type=tel].valid, .content-wrap input[type=email].valid, .content-wrap input[type=pass].valid, .content-wrap input[type=date].valid, .content-wrap input[type=number].valid, .content-wrap select.valid {
   border: 1px solid #22A030; }
 
 .content-wrap textarea {
