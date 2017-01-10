@@ -30,10 +30,10 @@
 									<div class="line-header"></div>
 									<h2><?php one_field('internship_specialization'); ?></h2>
 									<ul>
-										<?php surround_one_field('internship_institution', '<li>Supervised by ', '</li>'); ?>
-										<?php surround_one_field('internship_website', '<li>Portfolio: ', '</li>'); ?>
-										<?php surround_one_field('internship_email', '<li>Contact email: ', '</li>'); ?>
-										<?php surround_one_field('internship_phone', '<li>Phone: ', '</li>'); ?>
+										<?php surround_one_field('internship_photo', '<img class="center" src="', '" alt="Photo of the intern" />'); ?>
+										<?php surround_one_field('internship_institution', '<li>Studied at ', '</li>'); ?>
+										<?php surround_one_field('internship_website', '<li>Portfolio: <a href="http://'.get_field('internship_website').'">', '</a></li>'); ?>
+										<?php surround_one_field('internship_email', '<li>Contact email: <a href="mailto:'.get_field('internship_email').'">', '</a></li>'); ?>
 									</ul>
 								</div>
 								<div class="grid size-8 size-12--portable">
