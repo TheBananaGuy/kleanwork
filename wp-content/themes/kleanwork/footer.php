@@ -1,4 +1,4 @@
-	
+			</div>
 		    <footer class="band band--banner band--dark b-lazy-bg" style="background-image: url(<?php  print_source(IMAGE_FOLDER); ?>foot--dark.jpg);">
 		        <div class="wrap">
 
