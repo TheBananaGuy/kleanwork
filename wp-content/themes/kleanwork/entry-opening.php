@@ -18,18 +18,18 @@
 					</div> -->
 					<div class="band band--article">
 						<div class="wrap">
-							<div class="grid-group">
-								<div class="grid size-8 size-12--portable">
-									
-									<?php one_field('opening_main'); ?>
-								</div>
-								<div class="grid size-4 size-12--portable boxes">
+							<div class="grid-group grid-group--reverse">
+								<div class="grid size-4 size-12--portable boxes spacing">
 									<div class="line-header"></div>
 									<h2><?php one_field('opening_type'); ?></h2>
 									<ul>
 										<?php  surround_one_field('opening_location', '<li>Location: ', '</li>'); ?>
 										<?php // surround_field_loop('test', '<li>', '</li>'); ?>
 									</ul>
+								</div>
+								<div class="grid size-8 size-12--portable">
+									
+									<?php one_field('opening_main'); ?>
 								</div>
 							</div>
 						</div>

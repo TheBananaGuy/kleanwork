@@ -25,12 +25,8 @@
 					</div>
 					<div class="band band--article">
 						<div class="wrap">
-							<div class="grid-group">
-								<div class="grid size-8 size-12--portable">
-									
-									<?php one_field('internship_story'); ?>
-								</div>
-								<div class="grid size-4 size-12--portable boxes">
+							<div class="grid-group grid-group--reverse">
+								<div class="grid size-4 size-12--portable boxes spacing">
 									<div class="line-header"></div>
 									<h2><?php one_field('internship_specialization'); ?></h2>
 									<ul>
@@ -39,6 +35,10 @@
 										<?php surround_one_field('internship_email', '<li>Contact email: ', '</li>'); ?>
 										<?php surround_one_field('internship_phone', '<li>Phone: ', '</li>'); ?>
 									</ul>
+								</div>
+								<div class="grid size-8 size-12--portable">
+									
+									<?php one_field('internship_story'); ?>
 								</div>
 							</div>
 						</div>
