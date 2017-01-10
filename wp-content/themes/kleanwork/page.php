@@ -21,7 +21,7 @@ if ($post->post_parent === 30) {	// ID of the stories page
 
 
 						<div class="band">
-							<div class="wrap">
+							<div class="wrap limit-width">
 
 <?php the_content(); ?>
 		

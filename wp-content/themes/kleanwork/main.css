@@ -2589,3 +2589,7 @@ body {
 .band--opening:hover {
   background-color: #154733;
   color: #fff; }
+
+.limit-width h3, .limit-width p {
+  max-width: 40rem;
+  margin: auto; }

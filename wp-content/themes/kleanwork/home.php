@@ -3,7 +3,7 @@ $page_for_posts = get_option('page_for_posts');
 ?>
 
 				<div class="band band--dark">
-					<div class="wrap">
+					<div class="wrap limit-width">
 						<h2><?php if(the_field('openings_heading', $page_for_posts)) {the_field('openings_heading', $page_for_posts);} ?></h2>
 						<?php if(the_field('openings_content', $page_for_posts)) {the_field('openings_content', $page_for_posts);} ?>
 					</div>
@@ -13,7 +13,7 @@ $page_for_posts = get_option('page_for_posts');
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<a href="<?php the_permalink(); ?>">
 					<div class="band band--opening">
-						<div class="wrap">
+						<div class="wrap limit-width">
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<header>
 								<h2 class="entry-title"><?php the_title(); ?></h2>
