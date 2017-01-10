@@ -18,7 +18,16 @@ if ($post->post_parent === 30) {	// ID of the stories page
 					</header>
 
 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+
+
+						<div class="band">
+							<div class="wrap">
+
 <?php the_content(); ?>
+		
+							</div>
+						</div>
+
 <?php // if(the_field('bonus_area')) {the_field('bonus_area');} ?>
 
 						<div class="entry-links"><?php wp_link_pages(); ?></div>
