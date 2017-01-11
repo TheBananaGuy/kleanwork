@@ -41,7 +41,8 @@
 $child_pages_query_args = array(
     'post_type'   => 'page',
     'post_parent' => $post->ID,
-    'orderby'     => 'menu_order'
+    'orderby'     => 'menu_order',
+    'order' => 'ASC'
 );
 
 $child_pages = new WP_Query( $child_pages_query_args );
