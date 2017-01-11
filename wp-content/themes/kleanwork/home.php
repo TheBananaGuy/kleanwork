@@ -4,8 +4,8 @@ $page_for_posts = get_option('page_for_posts');
 
 				<div class="band band--dark">
 					<div class="wrap limit-width">
-						<h2><?php if(the_field('openings_heading', $page_for_posts)) {the_field('openings_heading', $page_for_posts);} ?></h2>
-						<?php if(the_field('openings_content', $page_for_posts)) {the_field('openings_content', $page_for_posts);} ?>
+						<h2 class="caps"><?php if(the_field('openings_heading', $page_for_posts)) {the_field('openings_heading', $page_for_posts);} ?></h2>
+						<p class="manchet"><?php if(the_field('openings_content', $page_for_posts)) {the_field('openings_content', $page_for_posts);} ?></p>
 					</div>
 				</div>
 

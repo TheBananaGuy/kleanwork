@@ -7,7 +7,7 @@
 					<header class="js-top-banner">
 						<div class="band band--banner band--dark js-banner-picture band--picture js-show-picture-banner b-lazy-bg" <?php if ( has_post_thumbnail() ) { print('style="background-image:url(' . get_the_post_thumbnail_url() . ');"'); } ?> >
 							<div class="wrap">
-								<h2 class="entry-title"><?php the_title(); ?></h2>
+								<h2 class="entry-title caps"><?php the_title(); ?></h2>
 							</div>
 							
 						</div>
@@ -59,6 +59,15 @@ wp_reset_postdata();
 
 									</div>
 								</div>
+							</div>
+						</div>
+
+						<div class="wrap grid-group">
+							<div class="grid size-4 size-6--palm">
+								<img class="center" src="<?php print_source(IMAGE_FOLDER); ?>placeholder_protrait.jpg">
+							</div>
+							<div class="grid grid--last size-4 size-6--palm">
+								<img class="center" src="<?php print_source(IMAGE_FOLDER); ?>placeholder2_protrait.jpg">
 							</div>
 						</div>
 
