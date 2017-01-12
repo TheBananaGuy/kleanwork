@@ -27,3 +27,17 @@ body {
 	max-width: 40rem;
 	margin: auto;
 }
+
+option[selected=true] {
+	background-color: $color-primary;
+}
+
+.file {
+	&__dupe {
+		position: absolute;
+	}
+	&__ghost {
+		opacity: 0;
+		z-index: 10;
+	}
+}

@@ -6,7 +6,8 @@
         margin-bottom: $spacing*1.5;
         width: 100%;
 
-
+        select,
+        input[type="file"],
         input[type="text"],
         input[type="tel"],
         input[type="pass"],

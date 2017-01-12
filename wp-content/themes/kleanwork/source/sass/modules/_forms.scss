@@ -28,6 +28,7 @@
 
 
     select,
+    input[type="file"],
     input[type="text"],
     input[type="tel"],
     input[type="pass"],
@@ -178,6 +179,8 @@
         }
     }
 
+    select,
+    input[type="file"],
     input[type="text"],
     input[type="tel"],
     input[type="pass"],
