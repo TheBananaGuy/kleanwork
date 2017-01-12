@@ -86,7 +86,7 @@ class Walker_Custom_Menu extends Walker_Nav_Menu {
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
         $output .= sprintf( 
 '
-<div class="header__menu__band js-menu-band"><a href="%s"%s><h2>%s</h2></a></div>
+<div class="header__menu__band js-menu-band caps"><a href="%s"%s><h2>%s</h2></a></div>
 ',
             $item->url,
             ( $item->object_id === get_the_ID() ) ? ' class="current"' : '',
