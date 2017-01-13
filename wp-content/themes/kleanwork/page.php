@@ -33,7 +33,9 @@ if ($post->post_parent === 30) {	// ID of the stories page
 						<div class="entry-links"><?php wp_link_pages(); ?></div>
 				</article>
 
-<?php // if ( ! post_password_required() ) comments_template( '', true ); ?>
+<?php 
+call_content_block(1);
+// if ( ! post_password_required() ) comments_template( '', true ); ?>
 <?php endwhile; endif; ?>
 
 			

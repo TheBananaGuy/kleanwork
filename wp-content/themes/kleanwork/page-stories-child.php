@@ -48,6 +48,15 @@
 <?php // if(the_field('bonus_area')) {the_field('bonus_area');} ?>
 
 						<div class="entry-links"><?php wp_link_pages(); ?></div>
+
+                <div class="band band--dark">
+                    <div class="wrap">
+                        <h2 class="caps">want to be like <?php the_title(); ?>?</h2>
+                        <p class="manchet">There is always room for creative people</p>
+                        <a class="button button--light caps landmark" href="<?php print esc_url( home_url( '/' ) ); ?>apply" target="_self">Apply for an internship</a>
+                    </div>
+                </div>
+
 				</article>
 
 <?php // all_the_fields( array("internship_specialization", "internship_institution") ); ?>

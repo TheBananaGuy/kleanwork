@@ -66,12 +66,26 @@ print ('
 
 endwhile; endif;
 
-// Be kind; rewind
-wp_reset_postdata();
 ?>
 							</div>
 						</div>
 					</div>
+
+<?php
+
+// Be kind; rewind
+wp_reset_postdata();
+
+$argh = array(
+	'pagename' => 'stories'
+);
+$the_query = new WP_Query( $argh );
+if ( $the_query->have_posts() ) : $the_query->the_post();
+
+call_content_block(1);
+endif;
+
+?>
 			
 <?php // get_sidebar(); ?>
 <?php get_footer(); ?>

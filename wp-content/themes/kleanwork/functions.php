@@ -154,7 +154,7 @@ function surround_field_loop ($field_name, $start_tags = '', $end_tags = '') {
 }
 
 // call content blocks on a page, depending on how many are included through admin section
-function call_content_block ($block_amount) {
+function call_content_block ($block_amount, $relevance = false) {
     for ($counter=1; $counter<($block_amount+1); $counter++) {
         $partition_heading = "part-".$counter."_heading";
         $partition_content = "part-".$counter."_content";
@@ -163,20 +163,20 @@ function call_content_block ($block_amount) {
         $partition_style = "part-".$counter."_style";
         $partition_call = "part-".$counter."_call";
         $partition_button;
-        if (get_field($partition_style) != "band") {
+        if (get_field($partition_style, $relevance) != "band") {
             $partition_button = "button button--light";
         } else {
-            $partition_button = "button";
+            $partition_button = "button button--secondary";
         }
         echo '
-                        <div class="'.get_field($partition_style).'">
+                        <div class="'.get_field($partition_style, $relevance).'">
                             <div class="wrap">
-                                <h2 class="caps">'.get_field($partition_heading).'</h2>
+                                <h2 class="caps">'.get_field($partition_heading, $relevance).'</h2>
         ';
-                                surround_one_field($partition_image, '<img class="spacing" src="', '" alt="'.get_field($partition_call).'" />');
+                                surround_one_field($partition_image, '<img class="spacing" src="', '" alt="'.get_field($partition_call, $relevance).'" />');
         echo '
-                                <p>'.get_field($partition_content).'</p>
-                                <a class="'.$partition_button.' caps landmark" href="'.get_field($partition_link).'" target="_self">'.get_field($partition_call).'</a>
+                                <p>'.get_field($partition_content, $relevance).'</p>
+                                <a class="'.$partition_button.' caps landmark" href="'.get_field($partition_link, $relevance).'" target="_self">'.get_field($partition_call, $relevance).'</a>
                             </div>
                         </div>
         ';

@@ -17,6 +17,7 @@ $page_for_posts = get_option('page_for_posts');
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<header>
 								<h2 class="entry-title"><?php the_title(); ?></h2>
+								<p class="manchet spacing">@ <?php the_field('opening_location'); ?></p>
 
 <?php // edit_post_link(); ?>
 
@@ -38,6 +39,17 @@ $page_for_posts = get_option('page_for_posts');
 <?php // if ( ! post_password_required() ) comments_template( '', true ); ?>
 <?php endwhile; endif; ?>
 
+<?php 
+$argh = array(
+	'page_id' => $page_for_posts
+);
+$the_query = new WP_Query( $argh );
+// The Loop
+if ( $the_query->have_posts() ) :  $the_query->the_post();
+call_content_block(2, $page_for_posts); endif;
+// Reset Post Data
+wp_reset_postdata();
+?>
 			
 <?php // get_sidebar(); ?>
 <?php get_footer(); ?>

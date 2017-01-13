@@ -31,6 +31,7 @@
 
 															<option>---</option>
 <?php
+endwhile; endif;
 // global $post;
 $child_pages_query_args = array(
     'post_type'   => 'post'
@@ -94,7 +95,7 @@ wp_reset_postdata();
 												</div>
 											</div>
 
-											<input class="right" type="submit" name="apply_apply" value="Apply now!">
+											<input class="right button--secondary" type="submit" name="apply_apply" value="Apply now!">
 
 										</form>
 
@@ -103,17 +104,21 @@ wp_reset_postdata();
 							</div>
 						</div>
 
-						<div class="wrap grid-group">
-							<div class="grid size-4 size-6--palm">
-								<img class="center" src="<?php print_source(IMAGE_FOLDER); ?>placeholder_protrait.jpg">
-							</div>
-							<div class="grid grid--last size-4 size-6--palm">
-								<img class="center" src="<?php print_source(IMAGE_FOLDER); ?>placeholder2_protrait.jpg">
-							</div>
-						</div>
+<?php
+$argh = array(
+	'pagename' => 'apply'
+);
+$the_query = new WP_Query( $argh );
+if ( $the_query->have_posts() ) : $the_query->the_post();
+
+call_content_block(1);
+endif;
+?>
+
+
 
 				</article>
 
-<?php endwhile; endif; ?>
+<?php  ?>
 
 <?php get_footer(); ?>
