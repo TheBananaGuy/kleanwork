@@ -152,3 +152,33 @@ function surround_field_loop ($field_name, $start_tags = '', $end_tags = '') {
         surround_one_field($field_name.$counter, $start_tags, $end_tags);
     }
 }
+
+// call content blocks on a page, depending on how many are included through admin section
+function call_content_block ($block_amount) {
+    for ($counter=1; $counter<($block_amount+1); $counter++) {
+        $partition_heading = "part-".$counter."_heading";
+        $partition_content = "part-".$counter."_content";
+        $partition_link = "part-".$counter."_link";
+        $partition_image = "part-".$counter."_image";
+        $partition_style = "part-".$counter."_style";
+        $partition_call = "part-".$counter."_call";
+        $partition_button;
+        if (get_field($partition_style) != "band") {
+            $partition_button = "button button--light";
+        } else {
+            $partition_button = "button";
+        }
+        echo '
+                        <div class="'.get_field($partition_style).'">
+                            <div class="wrap">
+                                <h2 class="caps">'.get_field($partition_heading).'</h2>
+        ';
+                                surround_one_field($partition_image, '<img class="spacing" src="', '" alt="'.get_field($partition_call).'" />');
+        echo '
+                                <p>'.get_field($partition_content).'</p>
+                                <a class="'.$partition_button.' caps landmark" href="'.get_field($partition_link).'" target="_self">'.get_field($partition_call).'</a>
+                            </div>
+                        </div>
+        ';
+    }
+}

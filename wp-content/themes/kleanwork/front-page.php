@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<?php
+// var_dump(get_field('part-1_style')); 
+// echo surround_one_field('part-1_style', '<div>', '</div>');
+?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -22,31 +26,12 @@
 
 <?php // if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 
-						<div class="band">
-							<div class="wrap">
-
-
-		
-							</div>
-						</div>
-
 <?php // if(the_field('bonus_area')) {the_field('bonus_area');} 
 // all_the_fields( array("main_one", "main_two", "main_three") );
 ?>
 
 <?php
-for ($counter=1; $counter<4; $counter++) {
-	$partition_heading = "main_".$counter."_heading";
-	$partition_content = "main_".$counter."_content";
-	print('
-						<div class="band">
-							<div class="wrap">
-								<h2>'); one_field($partition_heading); print('</h2>
-								'); one_field($partition_content);	 print('
-							</div>
-						</div>
-	');
-}
+call_content_block(4);
 ?>
 
 						<div class="entry-links"><?php wp_link_pages(); ?></div>
