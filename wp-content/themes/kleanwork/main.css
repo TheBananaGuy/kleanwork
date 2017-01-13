@@ -1836,7 +1836,7 @@ footer .band--banner {
   z-index: 1000; }
 
 .block {
-  width: 270px;
+  width: 360px;
   margin: 15px; }
 
 .block.block--double .block__image {
@@ -1859,7 +1859,7 @@ footer .band--banner {
   position: absolute; }
 
 .block__image {
-  height: 210px;
+  height: 280px;
   position: relative;
   transition: all .3s ease; }
 
@@ -1876,7 +1876,7 @@ footer .band--banner {
 .block__content {
   padding: 15px;
   text-align: center;
-  height: 210px; }
+  height: 280px; }
 
 .block__content p {
   margin-bottom: 7.5px; }
@@ -1902,7 +1902,7 @@ footer .band--banner {
 @media all and (max-width: 341px) {
   .block {
     width: 100%;
-    max-width: 270px;
+    max-width: 360px;
     margin: 15px auto;
     float: none; } }
 

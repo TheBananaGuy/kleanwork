@@ -9,7 +9,7 @@
 }
 
 .block {
-    width: 270px;
+    width: 360px;
     margin: $spacing/2;
     float: left;
 
@@ -43,7 +43,7 @@
     }
 
     &__image {
-        height: 210px;
+        height: 280px;
         position: relative;
         transition: all .3s ease;
 
@@ -67,7 +67,7 @@
     &__content {
         padding: $spacing/2;
         text-align: center;
-        height: 210px;
+        height: 280px;
 
         p {
             margin-bottom: $spacing/4;
@@ -107,7 +107,7 @@
 @include media(palm-small) {
     .block {
         width: 100%;
-        max-width: 270px;
+        max-width: 360px;
         margin: 15px auto;
         float: none;
     }
