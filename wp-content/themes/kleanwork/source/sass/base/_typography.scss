@@ -284,7 +284,7 @@ p {
 
 
 .icon.icon-some:before {
-  content: "#";
+  content: "!";
   border: 1px solid $color-dark;
   border-radius: 5px;
   padding: 4px 10px 4px 7px;
@@ -304,7 +304,7 @@ p {
   }
 }
 .icon.icon-some:after {
-  content:"SoMe";
+  content:"DK";
   font-size: $font-size-medium;
   @include media(palm) {
     font-size: $font-size-small;

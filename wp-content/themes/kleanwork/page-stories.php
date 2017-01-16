@@ -4,18 +4,22 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<header class="header">
-						<h2 class="entry-title caps"><?php the_title(); ?></h2>
+						<header class="header band band--dark">
 
 <?php // edit_post_link(); ?>
 
+						<div class="">
+<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+							<div class="wrap limit-width">
+							<h2 class="entry-title caps"><?php the_title(); ?></h2>
+							</div>
+						</div>
 						</header>
 
-<?php // if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 							<div class="band">
 								<div class="wrap">
 
-<?php the_content(); ?>
+<?php // the_content(); ?>
 
 								</div>
 							</div>

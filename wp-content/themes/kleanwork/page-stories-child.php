@@ -32,7 +32,7 @@
 									<ul>
 										<?php surround_one_field('internship_photo', '<img class="center" src="', '" alt="Photo of the intern" />'); ?>
 										<?php surround_one_field('internship_institution', '<li>Studied at ', '</li>'); ?>
-										<?php surround_one_field('internship_portfolio--mask', '<li>Portfolio: <a href="'.get_field('internship_portfolio--url').'" target="blank">', '</a></li>'); ?>
+										<?php surround_one_field('internship_portfolio--mask', '<li>Check out more at <a href="'.get_field('internship_portfolio--url').'" target="blank">', '</a></li>'); ?>
 										<?php surround_one_field('internship_email', '<li>Contact email: <a href="mailto:'.get_field('internship_email').'">', '</a></li>'); ?>
 									</ul>
 								</div>

@@ -575,7 +575,7 @@ p strong {
   content: '\f006'; }
 
 .icon.icon-some:before {
-  content: "#";
+  content: "!";
   border: 1px solid #000;
   border-radius: 5px;
   padding: 4px 10px 4px 7px;
@@ -592,7 +592,7 @@ body, html {
   width: 100%; }
 
 .icon.icon-some:after {
-  content: "SoMe";
+  content: "DK";
   font-size: 20px; }
 
 @media all and (max-width: 680px) {
@@ -1876,7 +1876,7 @@ footer .band--banner {
 .block__content {
   padding: 15px;
   text-align: center;
-  height: 210px; }
+  height: 150px; }
 
 .block__content p {
   margin-bottom: 7.5px; }

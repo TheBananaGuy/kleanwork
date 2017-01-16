@@ -19,9 +19,9 @@
 		        <div id="pseudo-header">
 		            <div class="header">
 		                <a href="<?php print esc_url( home_url( '/' )); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img src="<?php print_source(IMAGE_FOLDER); ?>logo.png" height="66" width="462" alt="Logo" class="logo b-lazy" /></a>
-<?php	//		                <div class="social js-open-social">
-	//	                    <p><span class="icon icon-some"></span></p>		coming soon
-	//	                </div> ?>
+		                <div class="social">
+		                    <p><span class="icon icon-some"></span></p>
+		                </div>
 		                <div class="menu js-open-menu">
 		                    <p>
 		                        <span class="icon icon-menu">
@@ -40,9 +40,9 @@
 
 		            <div class="header">
 	                    <a href="<?php print esc_url( home_url( '/' )); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><img class="b-lazy logo" src="<?php print_source(IMAGE_FOLDER); ?>logo.png" height="66" width="462" alt="Logo" /></a>
-<?php	//		                <div class="social js-open-social">
-	//	                    <p><span class="icon icon-some"></span></p>		coming soon
-	//	                </div> ?>
+		                <div class="social">
+		                    <p><span class="icon icon-some"></span></p>
+		                </div>
 		                <div class="menu js-open-menu">
 		                    <p>
 		                        <span class="icon icon-menu">
