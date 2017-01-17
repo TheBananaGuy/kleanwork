@@ -4,7 +4,7 @@
 
 		            <h2>GET IN TOUCH</h2>
 
-		                    <p class="contact-phone"><a href="tel:70202797"><span>70 202 797</span></a></p>
+<!-- 		                    <p class="contact-phone"><a href="tel:70202797"><span>70 202 797</span></a></p> -->
 
 		            <div class="some">
 		                    <div class="some__icon">
