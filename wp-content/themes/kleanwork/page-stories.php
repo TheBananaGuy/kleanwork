@@ -4,25 +4,33 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<header class="header band band--dark">
 
 <?php // edit_post_link(); ?>
 
-						<div class="">
-<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
-							<div class="wrap limit-width">
-							<h2 class="entry-title caps"><?php the_title(); ?></h2>
+
+<?php get_template_part( 'page-chunk__content-header' ); ?>
+
+
+						<div class="band band--article">
+							<div class="wrap">
+								<div class="grid-group grid-group--reverse">
+									<div class="grid size-4 size-12--portable boxes spacing">
+										<div class="line-header"></div>
+											<h2>Interesting facts</h2>
+										<ul>
+											<?php surround_field_loop('afterheader_side_', '<li>', '</li>'); ?>
+										</ul>
+									</div>
+									<div class="grid size-8 size-12--portable">
+										<?php surround_one_field('afterheader_heading', '<h2>', '</h2>'); ?>
+										<?php surround_one_field('afterheader_text', '<p>', '</p>'); ?>
+									</div>
+								</div>
 							</div>
 						</div>
-						</header>
-
-							<div class="band">
-								<div class="wrap">
 
 <?php // the_content(); ?>
 
-								</div>
-							</div>
 <?php // if(the_field('bonus_area')) {the_field('bonus_area');} ?>
 
 							<div class="entry-links"><?php wp_link_pages(); ?></div>
@@ -45,8 +53,7 @@
 $child_pages_query_args = array(
     'post_type'   => 'page',
     'post_parent' => $post->ID,
-    'orderby'     => 'menu_order',
-    'order' => 'ASC'
+    'orderby'     => 'menu_order'
 );
 
 $child_pages = new WP_Query( $child_pages_query_args );
@@ -57,12 +64,12 @@ print ('
 									<div class="block">
 										<div class="block__image">
 											<img src="'); one_field('internship_face'); print('">
-											<div class="title">
+											<div class="title medium">
 												'); the_title(); print('
 											</div>
 										</div>
 										<div class="block__content">
-											<p>'); one_field('internship_testimonial'); print('</p>
+											<p>"'); one_field('internship_testimonial'); print('"</p>
 										</div>
 									</div>
 								</a>

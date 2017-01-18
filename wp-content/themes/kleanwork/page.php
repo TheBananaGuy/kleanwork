@@ -10,12 +10,10 @@ if ($post->post_parent === 30) {	// ID of the stories page
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="header">
-					<h2 class="entry-title caps"><?php the_title(); ?></h2>
 
 <?php // edit_post_link(); ?>
 
-					</header>
+<?php get_template_part( 'page-chunk__content-header' ); ?>
 
 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 

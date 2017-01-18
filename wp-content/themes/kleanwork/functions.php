@@ -175,7 +175,7 @@ function call_content_block ($block_amount, $relevance = false) {
         ';
                                 surround_one_field($partition_image, '<img class="spacing" src="', '" alt="'.get_field($partition_call, $relevance).'" />');
         echo '
-                                <p>'.get_field($partition_content, $relevance).'</p>
+                                <p class="medium">'.get_field($partition_content, $relevance).'</p>
                                 <a class="'.$partition_button.' caps landmark" href="'.get_field($partition_link, $relevance).'" target="_self">'.get_field($partition_call, $relevance).'</a>
                             </div>
                         </div>

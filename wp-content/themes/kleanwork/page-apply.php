@@ -4,22 +4,27 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="js-top-banner">
-						<div class="band band--banner band--dark js-banner-picture band--picture js-show-picture-banner b-lazy-bg" <?php if ( has_post_thumbnail() ) { print('style="background-image:url(' . get_the_post_thumbnail_url() . ');"'); } ?> >
-							<div class="wrap">
-								<h2 class="entry-title caps"><?php the_title(); ?></h2>
-							</div>
-							
-						</div>
-					</header>
+
+<?php get_template_part( 'page-chunk__content-header' ); ?>
 
 
 						<div class="band band--article">
 							<div class="wrap">
-								<div class="grid-group">
+								<div class="grid-group grid-group--reverse">
+
+									<div class="grid size-4 size-12--portable boxes spacing">
+										<div class="line-header"></div>
+											<h2>NB!</h2>
+										<ul>
+											<?php surround_field_loop('afterheader_side_', '<li>', '</li>'); ?>
+										</ul>
+									</div>
+
 									<div class="grid size-8 size-12--portable">
 
-<?php the_content(); ?>
+										<?php surround_one_field('afterheader_heading', '<h2>', '</h2>'); ?>
+										<?php surround_one_field('afterheader_text', '<p>', '</p>'); ?>
+<?php // the_content(); ?>
 
 										<form class="js-form" name="application-form" method="POST" action="" novalidate >
 
@@ -111,7 +116,7 @@ $argh = array(
 $the_query = new WP_Query( $argh );
 if ( $the_query->have_posts() ) : $the_query->the_post();
 
-call_content_block(1);
+call_content_block(2);
 endif;
 ?>
 
