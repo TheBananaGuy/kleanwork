@@ -10,15 +10,7 @@
 
 						<div class="band band--article">
 							<div class="wrap">
-								<div class="grid-group grid-group--reverse">
-
-									<div class="grid size-4 size-12--portable boxes spacing">
-										<div class="line-header"></div>
-											<h2>NB!</h2>
-										<ul>
-											<?php surround_field_loop('afterheader_side_', '<li>', '</li>'); ?>
-										</ul>
-									</div>
+								<div class="grid-group grid-group">
 
 									<div class="grid size-8 size-12--portable">
 
@@ -105,6 +97,15 @@ wp_reset_postdata();
 										</form>
 
 									</div>
+
+									<div class="grid size-4 size-12--portable boxes spacing">
+										<div class="line-header"></div>
+											<h2>NB!</h2>
+										<ul>
+											<?php surround_field_loop('afterheader_side_', '<li>', '</li>'); ?>
+										</ul>
+									</div>
+
 								</div>
 							</div>
 						</div>
