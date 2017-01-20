@@ -19,24 +19,6 @@ if ($post->post_parent === 30) {	// ID of the stories page
 <?php // if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 
 <?php // the_content(); ?>
-
-						<div class="band band--article">
-							<div class="wrap">
-								<div class="grid-group grid-group--reverse">
-									<div class="grid size-4 size-12--portable boxes spacing">
-										<div class="line-header"></div>
-											<h2>Interesting facts</h2>
-										<ul>
-											<?php surround_field_loop('afterheader_side_', '<li>', '</li>'); ?>
-										</ul>
-									</div>
-									<div class="grid size-8 size-12--portable">
-										<?php surround_one_field('afterheader_heading', '<h2>', '</h2>'); ?>
-										<?php surround_one_field('afterheader_text', '<p>', '</p>'); ?>
-									</div>
-								</div>
-							</div>
-						</div>
 		
 <?php
 
