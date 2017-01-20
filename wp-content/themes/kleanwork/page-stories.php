@@ -59,21 +59,21 @@ $child_pages_query_args = array(
 $child_pages = new WP_Query( $child_pages_query_args );
 
 if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) : $child_pages->the_post();
-print ('
-								<a class="block__link" href="'); the_permalink(); print('">
+echo '
+								<a class="block__link" href="'.get_permalink().'">
 									<div class="block">
 										<div class="block__image">
-											<img src="'); one_field('internship_face'); print('">
+											<img src="'.get_field('internship_face').'" alt="See the story of '.get_the_title().'" />
 											<div class="title medium">
-												'); the_title(); print('
+												'.get_the_title().'
 											</div>
 										</div>
 										<div class="block__content">
-											<p>"'); one_field('internship_testimonial'); print('"</p>
+											<p>"'.get_field('internship_testimonial').'"</p>
 										</div>
 									</div>
 								</a>
-');
+';
 
 endwhile; endif;
 
