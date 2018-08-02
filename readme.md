@@ -1,3 +1,10 @@
-# READ CAREFULLY!!!
+# Employee and intern hiring platform for Klean
 
-This is a project meant for an institution as a final exam project. Please DO NOT use any materials and source code from this repository.
+## Disclaimer
+
+This was an educational projecct during my studies in BAAA (Business Academy Aarhus)
+Exam project for Multimedia Design & Communication AP-degree programme.
+
+## Overview
+
+Attempt to use existing design to build a **WordPress**-driven platform to hire new staff.
